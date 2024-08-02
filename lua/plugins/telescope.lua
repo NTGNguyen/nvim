@@ -15,8 +15,6 @@ return {
 
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope | Files", silent = true })
 
-    vim.keymap.set("n", "<leader>fs", "<cmd>Telescope persisted<cr>", { desc = "Telescope | Sessions", silent = true })
-
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Telescope | Marks", silent = true })
 
     vim.keymap.set("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", { desc = "Telescope | Man Pages", silent = true })
@@ -41,6 +39,13 @@ return {
     vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Telescope | Keymaps", silent = true })
 
     vim.keymap.set("n", "<leader>fC", "<cmd>Telescope commands<cr>", { desc = "Telescope | Commands", silent = true })
+
+    vim.keymap.set(
+      "n",
+      "<leader>fs",
+      "<cmd>Telescope spell_suggest<cr>",
+      { desc = "Telescope | Spell Suggest", silent = true }
+    )
 
     vim.keymap.set(
       "n",
