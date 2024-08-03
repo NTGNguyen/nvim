@@ -260,7 +260,7 @@ vim.keymap.set("c", "<S-Tab>", function()
 end, { desc = "General | Word Search Decrement", expr = true })
 
 -- Disable Default "s" Keymap In Neovim and Replace with custom Windows & TS Swap
-vim.keymap.set("n", "s", "<nop>", { desc = "Windows & TS Swap", silent = true, remap = true })
+vim.keymap.set("n", "s", "<nop>", { desc = "Windows, Buffer, TS Swap", silent = true, remap = true })
 
 -- Find Config Files
 vim.keymap.set("n", "<leader>nf", function()
