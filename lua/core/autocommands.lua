@@ -113,18 +113,56 @@ autocmd("FileType", {
   group = general,
   desc = "Set shiftwidth to 4 in these filetypes",
 })
---[[
-autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
-  -- nested = true, -- for format on save
-  callback = function()
-    if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
-      vim.cmd "silent! w"
-    end
-  end,
-  group = general,
-  desc = "Auto Save",
-})
-]]
+
+-- autocmd("BufEnter", {
+--   callback = function()
+--     local exclude_fts = {
+--       "toml",
+--       "yaml",
+--       "json",
+--     }
+--     for _, ft in pairs(exclude_fts) do
+--       if ft == vim.bo.filetype then
+--         return
+--       end
+--     end
+--
+--     local exclude_patterns = {
+--       [[.*conf.*]],
+--       [[.*ini.*]],
+--     }
+--     for _, pattern in pairs(exclude_patterns) do
+--       if vim.regex(pattern):match_str(vim.bo.filetype) then
+--         return
+--       end
+--     end
+--
+--     vim.b.auto_save_enabled = true
+--   end,
+--
+--   group = general,
+--   desc = "Set local Auto Save Enabled",
+-- })
+
+-- NOTE: For format on save:
+-- If nested = true, dont ":w<cr>" manually on buffer which "vim.b.auto_save_enabled == true"
+-- Also there's a bug while typing
+-- When nested = false (default), we have to manually ":w<cr>" to format on save
+
+-- autocmd({ "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
+--   -- nested = true, -- for format on save
+--   callback = function()
+--     if not vim.b.auto_save_enabled then
+--       return
+--     end
+--     if vim.bo.filetype ~= "" and vim.bo.buftype == "" then
+--       vim.cmd "silent! w"
+--     end
+--   end,
+--   group = general,
+--   desc = "Auto Save",
+-- })
+
 autocmd("FocusGained", {
   callback = function()
     vim.cmd "checktime"

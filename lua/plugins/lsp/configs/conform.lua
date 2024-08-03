@@ -69,14 +69,10 @@ return {
   "stevearc/conform.nvim",
   event = "User FilePost",
   opts = {
-    format_after_save = {
-      async = true,
+    default_format_opts = {
+      lsp_format = "fallback",
     },
-    format_on_save = {
-      -- These options will be passed to conform.format()
-      quiet = true,
-      lsp_fallback = true,
-    },
+    format_after_save = {},
     formatters_by_ft = formatters_by_ft,
     formatters = formatters,
   },
