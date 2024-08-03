@@ -11,6 +11,7 @@ return {
     },
     preset = "modern",
     win = {
+      no_overlap = false,
       border = vim.g.border_enabled and "rounded" or "none",
     },
     delay = function()
@@ -26,7 +27,9 @@ return {
     require("which-key").setup(opts)
     require("which-key").add {
       {
+        { "<leader>P", group = "Yanky", icon = "", mode = { "n", "x" } },
         { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
+        { "<leader>S", group = "Snapshot", icon = "", mode = { "v" } },
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
         { "<leader>d", group = "Debugging", icon = "" },
@@ -39,7 +42,6 @@ return {
         { "<leader>p", group = "Plugins", icon = "" },
         { "<leader>r", group = "Runner", icon = "" },
         { "<leader>s", group = "Sessions", icon = "󰔚" },
-        { "<leader>S", group = "Snapshot", icon = "", mode = { "v" } },
         { "<leader>t", group = "Terminal", icon = "" },
         { "<leader>u", group = "Utils", icon = "" },
         { "<leader>v", group = "Venv", icon = "" },
