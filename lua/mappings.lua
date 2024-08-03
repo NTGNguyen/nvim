@@ -259,6 +259,10 @@ vim.keymap.set("c", "<S-Tab>", function()
   return "<S-Tab>"
 end, { desc = "General | Word Search Decrement", expr = true })
 
+-- Override default x keybind to delete without put into default register
+vim.keymap.set("n", "X", '"_dd', { desc = "General | Delete Line to Void Register", silent = true })
+vim.keymap.set("v", "x", '"_d', { desc = "General | Delete Selected to Void Register", silent = true })
+
 -- Disable Default "s" Keymap In Neovim and Replace with custom Windows & TS Swap
 vim.keymap.set("n", "s", "<nop>", { desc = "Windows, Buffer, TS Swap", silent = true, remap = true })
 
