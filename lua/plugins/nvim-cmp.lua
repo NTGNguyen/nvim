@@ -142,6 +142,7 @@ return {
 
     require("cmp").setup.cmdline(":", {
       -- mapping = cmdline_mappings,
+      mapping = require("cmp").mapping.preset.cmdline(),
       sources = {
         { name = "cmdline" },
       },
