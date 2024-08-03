@@ -1,5 +1,6 @@
 return {
   "gbprod/yanky.nvim",
+  enabled = false,
   dependencies = {
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope.nvim",

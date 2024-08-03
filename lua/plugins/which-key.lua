@@ -27,7 +27,8 @@ return {
     require("which-key").setup(opts)
     require("which-key").add {
       {
-        { "<leader>P", group = "Yanky", icon = "", mode = { "n", "x" } },
+        -- { "<leader>P", group = "Yanky", icon = "", mode = { "n", "x" } },
+        -- { "<leader>h", group = "Harpoon", icon = "" },
         { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
         { "<leader>S", group = "Snapshot", icon = "", mode = { "v" } },
         { "<leader>T", group = "Tests", icon = "󰙨" },
