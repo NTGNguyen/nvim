@@ -39,7 +39,7 @@ return {
         { "<leader>p", group = "Plugins", icon = "" },
         { "<leader>r", group = "Runner", icon = "" },
         { "<leader>s", group = "Sessions", icon = "󰔚" },
-        { "<leader>s", group = "Snapshot", icon = "", mode = { "v" } },
+        { "<leader>S", group = "Snapshot", icon = "", mode = { "v" } },
         { "<leader>t", group = "Terminal", icon = "" },
         { "<leader>u", group = "Utils", icon = "" },
         { "<leader>v", group = "Venv", icon = "" },
