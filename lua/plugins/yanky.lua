@@ -7,7 +7,7 @@ return {
   event = "User FilePost",
   opts = {
     ring = {
-      history_length = 50, --- @type integer Default to 100
+      history_length = 100, --- @type integer Default to 100
       storage = "sqlite",
     },
     highlight = {
@@ -15,9 +15,9 @@ return {
     },
   },
   init = function()
-    vim.keymap.set("n", "<leader>Ph", function()
+    vim.keymap.set("n", "<leader>fP", function()
       require("telescope").extensions.yank_history.yank_history {}
-    end, { desc = "Yanky | Open Yank History", silent = true })
+    end, { desc = "Telescope | Open Yank History", silent = true })
     vim.keymap.set({ "n", "x" }, "y", "<Plug>(YankyYank)", { desc = "Yanky | Yank text", silent = true })
     vim.keymap.set(
       { "n", "x" },
