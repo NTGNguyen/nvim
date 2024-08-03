@@ -85,7 +85,7 @@ return {
     table.insert(opts.sources, 2, { name = "copilot" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
-    table.insert(opts.sources, 3, { name = "cmp_yanky" })
+    -- table.insert(opts.sources, 3, { name = "cmp_yanky" })
 
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
@@ -205,8 +205,8 @@ return {
       build = "make install_jsregexp",
     },
     -- Yanky integration
-    {
-      "chrisgrieser/cmp_yanky",
-    },
+    -- {
+    --   "chrisgrieser/cmp_yanky",
+    -- },
   },
 }
