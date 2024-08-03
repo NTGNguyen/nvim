@@ -126,10 +126,16 @@ return {
         follow = true,
       },
       live_grep = {
-        additional_args = { "--hidden" },
+        additional_args = {
+          "--hidden",
+          "--multiline",
+        },
       },
       grep_string = {
-        additional_args = { "--hidden" },
+        additional_args = {
+          "--hidden",
+          "--multiline",
+        },
       },
     },
     extensions_list = { "themes", "terms", "fzf", "projects" },
