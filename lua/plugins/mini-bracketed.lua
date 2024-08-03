@@ -1,7 +1,5 @@
 ---@type NvPluginSpec
 return {
-  {
-    "echasnovski/mini.bracketed",
-    event = { "User FilePost" },
-  },
+  "echasnovski/mini.bracketed",
+  event = "User FilePost",
 }
