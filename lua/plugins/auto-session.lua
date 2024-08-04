@@ -36,6 +36,7 @@ return {
       "/",
       "~/",
       "~/Downloads",
+      "~/gits",
     },
     bypass_session_save_file_types = {
       "NvimTree",
