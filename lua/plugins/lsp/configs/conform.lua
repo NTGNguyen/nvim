@@ -51,6 +51,7 @@ local formatters = {
   },
   ["prettier"] = {
     append_args = {
+      "--ignore-gitignore", -- Format file which ignored by .gitignore
       "--single-quote",
       -- "--jsx-single-quote", -- NOTE: Don't use this if you want all jsx to be single quote
     },
