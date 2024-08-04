@@ -72,6 +72,14 @@ autocmd("TermOpen", {
 
 autocmd("BufReadPost", {
   callback = function()
+    local exclude_fts = {
+      "gitcommit",
+    }
+    for _, ft in pairs(exclude_fts) do
+      if ft == vim.bo.filetype then
+        return
+      end
+    end
     if fn.line "'\"" > 1 and fn.line "'\"" <= fn.line "$" then
       vim.cmd 'normal! g`"'
     end
