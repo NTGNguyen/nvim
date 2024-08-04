@@ -31,10 +31,15 @@ return {
     auto_save_enabled = true, -- Enables/disables auto saving
     auto_restore_enabled = true, --Enables/disables auto restoring
     auto_session_enabled = true, -- Enables/disables the plugin's auto save and restore features
+    auto_session_use_git_branch = true, -- Use the git branch to differentiate the session name
     auto_session_suppress_dirs = {
       "/",
       "~/",
       "~/Downloads",
+    },
+    bypass_session_save_file_types = {
+      "NvimTree",
+      "nvdash",
     },
     session_lens = {
       -- If load_on_setup is false, make sure you use `:SessionSearch` to open the picker as it will initialize everything first
