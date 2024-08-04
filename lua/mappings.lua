@@ -166,8 +166,7 @@ end, { desc = "General | Close Buffer", silent = true })
 
 -- Close Other Buffers
 vim.keymap.set("n", "<leader>C", function()
-  require("nvchad.tabufline").closeBufs_at_direction "left"
-  require("nvchad.tabufline").closeBufs_at_direction "right"
+  require("nvchad.tabufline").closeAllBufs()
 end, { desc = "General | Close Other Buffers", silent = true })
 
 -- Close buffers from Left
