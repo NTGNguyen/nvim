@@ -28,11 +28,9 @@ M.override = {
   NvDashAscii = { bg = "blue", fg = "black" },
   NvDashButtons = { bg = "black2", fg = "white" },
 
-  -- WARN: Only suitable while using catppuccin. Consider to remove if use another theme.
+  -- WARN: Only suitable while using catppuccin with transparent. Consider to remove if use another theme.
   TbFill = { bg = "NONE" },
-  Visual = {
-    bg = "one_bg2",
-  },
+  Visual = { bg = "one_bg2" },
   TelescopeSelection = { bg = "one_bg2" },
   TelescopeMatching = { bg = "NONE" },
 }
