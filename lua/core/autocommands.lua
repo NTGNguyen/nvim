@@ -82,14 +82,14 @@ autocmd("BufReadPost", {
 
 -- NOTE: "gbprod/yanky.nvim" has highlight on yank and put
 
--- autocmd("TextYankPost", {
---   callback = function()
---     -- require("vim.highlight").on_yank { higroup = "Visual", timeout = 200 }
---     require("vim.highlight").on_yank { timeout = 200 }
---   end,
---   group = general,
---   desc = "Highlight when yanking",
--- })
+autocmd("TextYankPost", {
+  callback = function()
+    -- require("vim.highlight").on_yank { higroup = "Visual", timeout = 200 }
+    require("vim.highlight").on_yank { timeout = 200 }
+  end,
+  group = general,
+  desc = "Highlight when yanking",
+})
 
 -- autocmd({ "BufEnter", "BufNewFile" }, {
 --   callback = function()
