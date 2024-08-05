@@ -38,6 +38,11 @@ return {
       json = { names = false },
       mason = { names = false },
       "*",
+      "!DiffviewFiles",
+      "!NvimTree",
+      "!TelescopePrompt",
+      "!TelescopeResults",
+      "!diff",
     },
   },
 }
