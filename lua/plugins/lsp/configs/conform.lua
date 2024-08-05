@@ -9,6 +9,7 @@ local formatters_by_ft = {
   -- go = { "gofumpt" },
   -- cs = { "csharpier" },
   sh = { "shfmt" },
+  zsh = { "beautysh" },
   ["markdown"] = { "prettier", "doctoc" },
   ["markdown.mdx"] = { "prettier", "doctoc" },
 }
@@ -34,11 +35,6 @@ for _, filetype in pairs(prettier_ft) do
 end
 
 local formatters = {
-  ["clang_format"] = {
-    append_args = {
-      "--fallback-style=Microsoft",
-    },
-  },
   ["doctoc"] = {
     append_args = {
       "--update-only",
@@ -54,6 +50,16 @@ local formatters = {
       "--ignore-gitignore", -- Format file which ignored by .gitignore
       "--single-quote",
       -- "--jsx-single-quote", -- NOTE: Don't use this if you want all jsx to be single quote
+    },
+  },
+  ["beautysh"] = {
+    append_args = {
+      "--indent-size=2",
+    },
+  },
+  ["clang_format"] = {
+    append_args = {
+      "--fallback-style=Microsoft",
     },
   },
   ["ruff_fix"] = {
