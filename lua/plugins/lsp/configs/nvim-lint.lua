@@ -17,6 +17,7 @@ return {
       typescript = { "eslint" },
       ghaction = { "actionlint" },
       bash = { "shellcheck" },
+      sh = { "shellcheck" },
     }
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
