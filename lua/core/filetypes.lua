@@ -5,6 +5,7 @@ vim.filetype.add {
     ["json"] = "jsonc",
   },
   pattern = {
+    [".*/hypr/.*%.conf"] = "hyprlang",
     [".*%.github/workflows/.*%.yml"] = "yaml.ghaction",
     [".*%.github/workflows/.*%.yaml"] = "yaml.ghaction",
     [".*"] = {

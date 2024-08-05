@@ -95,6 +95,7 @@ return {
       "dockerfile",
       "git_config",
       "ssh_config",
+      "hyprlang",
     },
     indent = {
       enable = false,
