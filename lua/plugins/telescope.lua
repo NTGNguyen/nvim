@@ -21,6 +21,13 @@ return {
 
     vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Telescope | Word", silent = true })
 
+    vim.keymap.set(
+      "n",
+      "<leader>fs",
+      "<cmd>Telescope grep_string<cr>",
+      { desc = "Telescope | Word Under Cursor", silent = true }
+    )
+
     vim.keymap.set("n", "<leader>ft", "<cmd>Telescope themes<cr>", { desc = "Telescope | Themes", silent = true })
 
     vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope | Buffers", silent = true })
@@ -42,7 +49,7 @@ return {
 
     vim.keymap.set(
       "n",
-      "<leader>fs",
+      "<leader>fS",
       "<cmd>Telescope spell_suggest<cr>",
       { desc = "Telescope | Spell Suggest", silent = true }
     )
