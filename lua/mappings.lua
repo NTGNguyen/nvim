@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Te
 -- Quit
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
 
+-- Write Quit
+vim.keymap.set("n", "<leader>x", "<cmd>wqa!<cr>", { desc = "General | Write Quit", silent = true })
+
 -- Toggle Tabufline
 vim.keymap.set("n", "<leader>ob", function()
   if vim.o.showtabline == 2 then
