@@ -324,6 +324,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function() -- Pass in "ev" if use below schedule to disable syntax highlight
     vim.b.minianimate_disable = true
     vim.b.cinnamon_disable = true
+    vim.b.navic_lazy_update_context = true
     local status_ok, _ = pcall(require, "neoscroll")
     if status_ok then
       vim.cmd "NeoscrollEnableBufferPM"

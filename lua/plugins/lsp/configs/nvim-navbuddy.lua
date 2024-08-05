@@ -4,7 +4,9 @@ return {
     "SmiteshP/nvim-navic",
     "MunifTanjim/nui.nvim",
   },
-  cmd = { "Navbuddy" },
+  cmd = {
+    "Navbuddy",
+  },
   init = function()
     vim.keymap.set("n", "<leader>ln", "<cmd>Navbuddy<cr>", { desc = "Navbuddy | Open", silent = true })
   end,
