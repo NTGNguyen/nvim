@@ -90,12 +90,7 @@ return {
       "java",
       "http",
       "json",
-      "json5",
-      "jsonc",
-      "dockerfile",
-      "git_config",
-      "ssh_config",
-      "hyprlang",
+      "latex",
     },
     indent = {
       enable = false,
