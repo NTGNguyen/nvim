@@ -97,7 +97,7 @@ function RunCode()
       default = "go run %",
     },
     html = {
-      default = "google-chrome-stable %", -- NOTE: Change this based on your browser that you use
+      default = "brave %", -- NOTE: Change this based on your browser that you use
     },
     java = {
       default = "java %",
