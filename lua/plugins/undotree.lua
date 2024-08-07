@@ -1,8 +1,10 @@
 ---@type NvPluginSpec
 return {
   "mbbill/undotree",
+  cmd = {
+    "UndotreeToggle",
+  },
   init = function()
-    vim.keymap.set("n", "<leader>ou", "<cmd>UndotreeToggle<cr>", { desc = "Undotree | Toggle Undotree", silent = true })
+    vim.keymap.set("n", "<leader>uu", "<cmd>UndotreeToggle<cr>", { desc = "Undotree | Toggle Undotree", silent = true })
   end,
-  cmd = { "UndotreeToggle" },
 }
