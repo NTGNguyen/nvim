@@ -107,6 +107,9 @@ return {
     end
 
     local icons = require "nvchad.icons.lspkind"
+    icons = vim.tbl_extend("force", icons, {
+      ["vim-dadbod-completion"] = "", -- Not working
+    })
 
     opts.formatting = {
       format = function(entry, vim_item)

@@ -44,6 +44,10 @@ M.add = {
   DiffviewDiffDelete = { fg = "black", bg = "red" },
   DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
   LspInlayHint = { link = "Comment" },
+
+  NotificationInfo = { link = "DiagnosticInfo" },
+  NotificationWarning = { link = "DiagnosticWarning" },
+  NotificationError = { link = "DiagnosticError" },
 }
 
 return M
