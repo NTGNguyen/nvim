@@ -2,18 +2,20 @@
 -- NOTE: For database query and processing
 return {
   {
-    "tpope/vim-dadbod",
-    enabled = false,
-    cmd = {
-      "DB",
-      "%DB",
-    },
-  },
-  {
     "kristijanhusak/vim-dadbod-ui",
-    enabled = false,
+    enabled = true,
     dependencies = {
-      "tpope/vim-dadbod",
+      {
+        "tpope/vim-dadbod",
+      },
+      {
+        "kristijanhusak/vim-dadbod-completion",
+        ft = {
+          "sql",
+          "mysql",
+          "plsql",
+        },
+      },
     },
     cmd = {
       "DBUI",

@@ -18,6 +18,9 @@ return {
       ghaction = { "actionlint" },
       bash = { "shellcheck" },
       sh = { "shellcheck" },
+      mysql = { "sqlfluff" },
+      sql = { "sqlfluff" },
+      sqloracle = { "sqlfluff" },
     }
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
