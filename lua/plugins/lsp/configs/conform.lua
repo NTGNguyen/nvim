@@ -12,9 +12,9 @@ local formatters_by_ft = {
   zsh = { "beautysh" },
   ["markdown"] = { "prettier", "doctoc" },
   ["markdown.mdx"] = { "prettier", "doctoc" },
-  mysql = { "sqlfluff" },
-  sql = { "sqlfluff" },
-  sqloracle = { "sqlfluff" },
+  mysql = { "sql_formatter_mysql" },
+  sql = { "sql_formatter" },
+  sqloracle = { "sql_formatter" },
 }
 
 local prettier_ft = {
