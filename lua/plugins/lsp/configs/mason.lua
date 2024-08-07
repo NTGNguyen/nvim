@@ -100,6 +100,9 @@ return {
           "docker_compose_language_service",
           "dockerls",
 
+          -- Database
+          "sqls",
+
           -- Hyrpland
           "hyprls",
         },
