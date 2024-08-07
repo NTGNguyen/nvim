@@ -6,7 +6,7 @@ return {
   enabled = true,
   config = function()
     local linters = require("lint").linters
-    linters.ruff.args = vim.list_extend(linters.ruff.args, { "--select=I", "--ignore=F401" })
+    vim.list_extend(linters.ruff.args, { "--select=I", "--ignore=F401" })
 
     require("lint").linters_by_ft = {
       python = { "ruff" },
@@ -18,9 +18,6 @@ return {
       ghaction = { "actionlint" },
       bash = { "shellcheck" },
       sh = { "shellcheck" },
-      mysql = { "sqlfluff" },
-      sql = { "sqlfluff" },
-      sqloracle = { "sqlfluff" },
     }
 
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {

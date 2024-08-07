@@ -37,9 +37,12 @@ return {
       "~/",
       "~/Downloads",
       "~/gits",
+      "~/gits/database",
     },
     bypass_session_save_file_types = {
       "NvimTree",
+      "dbout",
+      "dbui",
       "nvdash",
     },
     session_lens = {

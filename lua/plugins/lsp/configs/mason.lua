@@ -101,7 +101,8 @@ return {
           "dockerls",
 
           -- Database
-          "sqls",
+          -- I think dadbod can do it well
+          -- "sqls",
 
           -- Hyrpland
           "hyprls",

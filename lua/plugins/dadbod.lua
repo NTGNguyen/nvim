@@ -25,6 +25,9 @@ return {
     },
     init = function()
       vim.g.db_ui_use_nerd_fonts = 1
+      -- vim.g.db_ui_execute_on_save = 0
+
+      vim.keymap.set("n", "<leader>ub", "<cmd>DBUIToggle<cr>", { desc = "Dadbod | Toggle UI", silent = true })
     end,
   },
 }

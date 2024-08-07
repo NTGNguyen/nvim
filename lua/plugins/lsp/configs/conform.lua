@@ -71,6 +71,12 @@ local formatters = {
       "--ignore=F401",
     },
   },
+  ["sql_formatter_mysql"] = {
+    command = "sql-formatter",
+    args = {
+      "--language=mysql",
+    },
+  },
 }
 
 ---@type NvPluginSpec

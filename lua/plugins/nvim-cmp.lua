@@ -147,6 +147,18 @@ return {
         { name = "cmdline" },
       },
     })
+
+    -- Setup for dadbod
+    require("cmp").setup.filetype({
+      "mysql",
+      "plsql",
+      "sql",
+    }, {
+      sources = {
+        { name = "vim-dadbod-completion" },
+        { name = "buffer" },
+      },
+    })
   end,
   dependencies = {
     -- Icons
