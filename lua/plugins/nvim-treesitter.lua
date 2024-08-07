@@ -91,6 +91,7 @@ return {
       "http",
       "json",
       "latex",
+      "sql",
     },
     auto_install = vim.fn.executable "tree-sitter-cli" == 1,
     indent = {
