@@ -20,7 +20,7 @@ return {
       sh = { "shellcheck" },
     }
 
-    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
       callback = function()
         require("lint").try_lint()
       end,
