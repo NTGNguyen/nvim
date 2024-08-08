@@ -45,9 +45,10 @@ M.add = {
   DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
   LspInlayHint = { link = "Comment" },
 
-  NotificationInfo = { link = "DiagnosticInfo" },
-  NotificationWarning = { link = "DiagnosticWarning" },
-  NotificationError = { link = "DiagnosticError" },
+  -- Dadbod UI
+  NotificationInfo = { fg = "green", bg = "one_bg" },
+  NotificationWarning = { fg = "yellow", bg = "one_bg" },
+  NotificationError = { fg = "red", bg = "one_bg" },
 }
 
 return M
