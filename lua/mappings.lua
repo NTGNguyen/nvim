@@ -4,7 +4,7 @@ local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
 -- Remove All Text
-vim.keymap.set("n", "<leader>D", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
+vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
 
 -- Yank All Text
 vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Text", silent = true })
@@ -391,4 +391,4 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "General | Sav
 vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Highlight", silent = true })
 
 -- Select All
-vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })
+-- vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })

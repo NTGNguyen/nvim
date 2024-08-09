@@ -7,48 +7,48 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   init = function()
-    vim.keymap.set({ "n", "v" }, "<leader>Rs", function()
+    vim.keymap.set({ "n", "v" }, "<leader>urs", function()
       -- require("refactoring").select_refactor()
       require("telescope").extensions.refactoring.refactors()
     end, { desc = "Refactor | Select", silent = true })
     vim.keymap.set(
       { "n", "v" },
-      "<leader>Ri",
+      "<leader>uri",
       "<cmd>Refactor inline_var<cr>",
       { desc = "Refactor | Extract Inline Variable", silent = true }
     )
     vim.keymap.set(
       "n",
-      "<leader>RI",
+      "<leader>urI",
       "<cmd>Refactor inline_func<cr>",
       { desc = "Refactor | Extract Inline Function", silent = true }
     )
     vim.keymap.set(
       "n",
-      "<leader>Rb",
+      "<leader>urb",
       "<cmd>Refactor extract_block<cr>",
       { desc = "Refactor | Extract Block", silent = true }
     )
     vim.keymap.set(
       "n",
-      "<leader>RB",
+      "<leader>urB",
       "<cmd>Refactor extract_block_to_file<cr>",
       { desc = "Refactor | Extract Block to File", silent = true }
     )
-    vim.keymap.set("v", "<leader>Re", "<cmd>Refactor extract<cr>", { desc = "Refactor | Extract", silent = true })
+    vim.keymap.set("v", "<leader>ure", "<cmd>Refactor extract<cr>", { desc = "Refactor | Extract", silent = true })
     vim.keymap.set(
       "v",
-      "<leader>Rf",
+      "<leader>urf",
       "<cmd>Refactor extract_to_file<cr>",
       { desc = "Refactor | Extract to File", silent = true }
     )
     vim.keymap.set(
       "n",
-      "<leader>Rv",
+      "<leader>urv",
       "<cmd>Refactor extract_var<cr>",
       { desc = "Refactor | Extract Variable", silent = true }
     )
-    vim.keymap.set("n", "<leader>Rn", "<cmd>Refactor refactor_names<cr>", { desc = "Refactor | Names", silent = true })
+    vim.keymap.set("n", "<leader>urn", "<cmd>Refactor refactor_names<cr>", { desc = "Refactor | Names", silent = true })
   end,
   opts = {
     prompt_func_return_type = {

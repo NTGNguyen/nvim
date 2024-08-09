@@ -14,15 +14,15 @@ return {
   cmd = {
     "Markview",
   },
-  init = function()
-    vim.keymap.set("n", "<leader>mv", function()
-      if vim.bo.filetype == "markdown" then
-        vim.cmd "Markview"
-      else
-        vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Render" })
-      end
-    end, { desc = "Markview | Toggle View", silent = true })
-  end,
+  keys = {
+    {
+      "<leader>mv",
+      "<cmd>Markview<cr>",
+      desc = "Markdown | Toggle View",
+      ft = "markdown",
+      silent = true,
+    },
+  },
   config = function(_, opts)
     require("markview").setup(opts)
     vim.cmd "Markview disableAll"

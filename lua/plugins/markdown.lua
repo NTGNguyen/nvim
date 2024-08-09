@@ -9,15 +9,15 @@ return {
   cmd = {
     "RenderMarkdown",
   },
-  init = function()
-    vim.keymap.set("n", "<leader>mr", function()
-      if vim.bo.filetype == "markdown" then
-        vim.cmd "RenderMarkdown toggle"
-      else
-        vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Render" })
-      end
-    end, { desc = "Markdown | Toggle Render", silent = true })
-  end,
+  keys = {
+    {
+      "<leader>mr",
+      "<cmd>RenderMarkdown toggle<cr>",
+      desc = "Markdown | Toggle Render",
+      ft = "markdown",
+      silent = true,
+    },
+  },
   opts = {
     enabled = false,
   },

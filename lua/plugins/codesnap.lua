@@ -1,4 +1,5 @@
 ---@type NvPluginSpec
+-- NOTE: Code Snapshot
 return {
   "mistricky/codesnap.nvim",
   enabled = vim.fn.has "win32" == 0,
@@ -17,19 +18,19 @@ return {
       end)
     end
 
-    vim.keymap.set("x", "<leader>SS", function()
+    vim.keymap.set("x", "<leader>sS", function()
       ask_ext "CodeSnap"
     end, { desc = "CodeSnap | Save to Clipboard", silent = true })
-    vim.keymap.set("x", "<leader>Ss", function()
+    vim.keymap.set("x", "<leader>ss", function()
       ask_ext "CodeSnapSave"
     end, { desc = "CodeSnap | Save", silent = true })
-    vim.keymap.set("x", "<leader>Sa", function()
+    vim.keymap.set("x", "<leader>sa", function()
       ask_ext "CodeSnapASCII"
     end, { desc = "CodeSnap | Save ASCII to Clipboard", silent = true })
-    vim.keymap.set("x", "<leader>Sh", function()
+    vim.keymap.set("x", "<leader>sh", function()
       ask_ext "CodeSnapHighlight"
     end, { desc = "CodeSnap | Save Highlight to Clipboard", silent = true })
-    vim.keymap.set("x", "<leader>SH", function()
+    vim.keymap.set("x", "<leader>sH", function()
       ask_ext "CodeSnapSaveHighlight"
     end, { desc = "CodeSnap | Save Highlight", silent = true })
   end,

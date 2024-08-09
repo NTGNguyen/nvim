@@ -1,5 +1,5 @@
 ---@type NvPluginSpec
--- NOTE: For database query and processing
+-- NOTE: For Database Querying and Processing
 return {
   {
     "kristijanhusak/vim-dadbod-ui",

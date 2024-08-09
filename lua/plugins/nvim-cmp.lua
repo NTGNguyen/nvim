@@ -82,7 +82,7 @@ return {
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "cmp")
 
-    table.insert(opts.sources, 2, { name = "copilot" })
+    table.insert(opts.sources, 1, { name = "copilot" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
     -- table.insert(opts.sources, 3, { name = "cmp_yanky" })
@@ -158,6 +158,7 @@ return {
       "sql",
     }, {
       sources = {
+        { name = "copilot" },
         { name = "vim-dadbod-completion" },
         { name = "buffer" },
       },

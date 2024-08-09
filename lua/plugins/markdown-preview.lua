@@ -2,15 +2,15 @@
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
-  init = function()
-    vim.keymap.set("n", "<leader>mp", function()
-      if vim.bo.filetype == "markdown" then
-        vim.cmd "MarkdownPreviewToggle"
-      else
-        vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
-      end
-    end, { desc = "Markdown | Preview", silent = true })
-  end,
+  keys = {
+    {
+      "<leader>mp",
+      "<cmd>MarkdownPreviewToggle<cr>",
+      desc = "Markdown | Preview",
+      ft = "markdown",
+      silent = true,
+    },
+  },
   build = function()
     vim.fn["mkdp#util#install"]()
   end,
