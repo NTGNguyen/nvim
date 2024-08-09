@@ -1,6 +1,5 @@
 ---@type NvPluginSpec
 -- NOTE: Improve Other LSP Functionalities
-
 return {
   "nvimdev/lspsaga.nvim",
   event = "LspAttach",
