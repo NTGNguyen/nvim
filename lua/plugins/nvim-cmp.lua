@@ -107,20 +107,44 @@ return {
     end
 
     local icons = require "nvchad.icons.lspkind"
-    icons = vim.tbl_extend("force", icons, {
-      ["vim-dadbod-completion"] = "", -- Not working
-    })
+
+    local menu = {
+      ["vim-dadbod-completion"] = "",
+    }
 
     opts.formatting = {
       format = function(entry, vim_item)
-        local kind = require("lspkind").cmp_format { mode = "text", maxwidth = 50 }(entry, vim_item)
+        local kind = require("lspkind").cmp_format { mode = "text", menu = menu, maxwidth = 50 }(entry, vim_item)
         local strings = vim.split(kind.kind, " ", { trimempty = true })
         kind.kind = string.format(" %s  %s", icons[vim_item.kind], strings[1])
-        kind.menu = " " .. (strings[2] or "") .. ""
+        kind.menu = " " .. (kind.menu or "")
+        -- kind.menu = ({
+        --   ["vim-dadbod-completion"] = "",
+        -- })[entry.source.name]
 
         return kind
       end,
     }
+
+    -- vim.api.nvim_create_autocmd("FileType", {
+    --   pattern = { "sql", "mysql", "plsql" },
+    --   callback = function()
+    --     require("cmp").setup.buffer { sources = { { name = "vim-dadbod-completion" } } }
+    --   end,
+    -- })
+
+    -- Setup for dadbod
+    require("cmp").setup.filetype({
+      "mysql",
+      "plsql",
+      "sql",
+    }, {
+      sources = {
+        { name = "copilot" },
+        { name = "vim-dadbod-completion" },
+        { name = "buffer" },
+      },
+    })
 
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
@@ -148,19 +172,6 @@ return {
       mapping = cmdline_mappings,
       sources = {
         { name = "cmdline" },
-      },
-    })
-
-    -- Setup for dadbod
-    require("cmp").setup.filetype({
-      "mysql",
-      "plsql",
-      "sql",
-    }, {
-      sources = {
-        { name = "copilot" },
-        { name = "vim-dadbod-completion" },
-        { name = "buffer" },
       },
     })
   end,
