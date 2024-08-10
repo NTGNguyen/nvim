@@ -27,7 +27,12 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
       -- vim.g.db_ui_execute_on_save = 0
 
-      vim.keymap.set("n", "<leader>ub", "<cmd>DBUIToggle<cr>", { desc = "Dadbod | Toggle UI", silent = true })
+      vim.keymap.set("n", "<leader>ub", function()
+        if vim.g.nvdash_displayed then
+          require("nvchad.tabufline").close_buffer()
+        end
+        vim.cmd "DBUIToggle"
+      end, { desc = "Dadbod | Toggle UI", silent = true })
     end,
   },
 }
