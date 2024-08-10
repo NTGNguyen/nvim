@@ -522,7 +522,13 @@ snippet fprs
 snippet fprf
 	print(f"$0", file=${1:sys.stderr})
 
-snippet ignore Ignore All Rules
-	# noqa: $0
+snippet ignore-all Ignore All Rules
+	# noqa
+snippet ignore Ignore Rule(s)
+	# noqa: ${0:Rule, Rule,...}
 snippet ignore-ruff Ignore Specific Ruff rule(s)
-  # ruff: disable=$0
+  # ruff: disable=${0:Rule}
+snippet disable-range-format Disable Range Format
+  # fmt: off
+  $0
+  # fmt: on
