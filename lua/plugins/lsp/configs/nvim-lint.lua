@@ -8,15 +8,16 @@ return {
     local linters = require("lint").linters
     vim.list_extend(linters.ruff.args, { "--select=I", "--ignore=F401" })
 
+    -- NOTE: Used eslint-lsp already
     require("lint").linters_by_ft = {
-      python = { "ruff" },
-      -- markdown = { "markdownlint" },
-      latex = { "vale" },
       -- cpp = { "cpplint" },
-      javascript = { "eslint" },
-      typescript = { "eslint" },
-      ghaction = { "actionlint" },
+      -- javascript = { "eslint" },
+      -- markdown = { "markdownlint" },
+      -- typescript = { "eslint" },
       bash = { "shellcheck" },
+      ghaction = { "actionlint" },
+      latex = { "vale" },
+      python = { "ruff" },
       sh = { "shellcheck" },
     }
 
