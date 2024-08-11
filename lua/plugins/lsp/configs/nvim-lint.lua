@@ -8,17 +8,16 @@ return {
     local linters = require("lint").linters
     vim.list_extend(linters.ruff.args, { "--select=I", "--ignore=F401" })
 
-    -- NOTE: Used eslint-lsp already
     require("lint").linters_by_ft = {
       -- cpp = { "cpplint" },
-      -- javascript = { "eslint" },
       -- markdown = { "markdownlint" },
-      -- typescript = { "eslint" },
       bash = { "shellcheck" },
       ghaction = { "actionlint" },
+      javascript = { "eslint" },
       latex = { "vale" },
       python = { "ruff" },
       sh = { "shellcheck" },
+      typescript = { "eslint" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
