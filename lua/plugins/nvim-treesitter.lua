@@ -77,7 +77,6 @@ return {
       "go",
       "graphql",
       "html",
-      "html",
       "http",
       "java",
       "javascript",
