@@ -3,6 +3,7 @@ vim.filetype.add {
   extension = {
     ["templ"] = "templ",
     ["json"] = "jsonc",
+    ["http"] = "http",
   },
   pattern = {
     [".*/hypr/.*%.conf"] = "hyprlang",
