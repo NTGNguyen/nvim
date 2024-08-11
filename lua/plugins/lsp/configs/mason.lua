@@ -91,7 +91,7 @@ return {
           "marksman",
 
           -- Powershell
-          "powershell_es",
+          vim.fn.has "win32" == 1 and "powershell_es" or nil,
 
           -- Bash
           "bashls",
@@ -105,7 +105,7 @@ return {
           -- "sqls",
 
           -- Hyrpland
-          "hyprls",
+          vim.fn.executable "hyprland" and "hyprls" or nil,
         },
       }
 
