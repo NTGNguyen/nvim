@@ -238,7 +238,94 @@ M.ui = {
 
 M.cheatsheet = { theme = "grid" } -- simple/grid
 
-M.mason = { cmd = true, pkgs = {} }
+M.mason = {
+  cmd = true,
+  -- Use names from mason.nvim
+  -- For example, if you want to install "tsserver" you should use "typescript-language-server" in the list below
+  pkgs = {
+    -- Lua
+    "lua-language-server",
+    "vim-language-server",
+    "stylua",
+
+    -- Web Development
+    "css-lsp",
+    "emmet_language_server",
+    "eslint-lsp",
+    "html-lsp",
+    "js-debug-adapter",
+    "prettier",
+    "tailwindcss-language-server",
+    "typescript-language-server",
+    -- "deno",
+    -- "vue-language-server",
+
+    -- PHP
+    -- "intelephense",
+
+    -- C/C++
+    "clangd",
+    "codelldb",
+    -- "clang-format",
+    -- "cpptools",
+
+    -- CMake
+    -- "cmake-language-server",
+    -- "neocmakelsp",
+
+    -- Java
+    -- "jdtls",
+
+    -- Json
+    "json-lsp",
+
+    -- Yaml
+    "yaml-language-server",
+
+    -- Toml
+    "taplo",
+
+    -- Github Action
+    "actionlint",
+
+    -- Python
+    "debugpy",
+    "pyright",
+    "ruff",
+    -- "basedpyright",
+
+    -- Go
+    -- "gopls",
+
+    -- C#
+    -- "omnisharp",
+    -- "omnisharp-mono",
+
+    -- Markdown
+    "doctoc",
+    "markdownlint",
+    "marksman",
+    -- "vale_ls",
+
+    -- Shell
+    "bash-language-server",
+    "beautysh",
+    vim.fn.has "win32" == 1 and "powershell-editor-services" or nil,
+    "shellcheck",
+    "shfmt",
+
+    -- Docker
+    "docker_compose_language_service",
+    "dockerfile-language-server",
+
+    -- Database
+    "sql-formatter",
+    -- "sqls",
+
+    -- Others
+    vim.fn.executable "hyprland" and "hyprls" or nil,
+  },
+}
 
 M.lsp = { signature = false }
 
