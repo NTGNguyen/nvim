@@ -24,7 +24,7 @@ return {
         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
         includeInlayPropertyDeclarationTypeHints = true,
         includeInlayVariableTypeHints = true,
-        preferGoToSourceDefinition = true,
+        preferGoToSourceDefinition = false,
         quotePreference = "auto",
       },
     },
