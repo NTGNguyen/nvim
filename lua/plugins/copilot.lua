@@ -128,13 +128,13 @@ return {
       )
       vim.keymap.set(
         { "n", "v" },
-        "<leader>aS",
+        "<leader>as",
         "<cmd>CopilotChatStop<cr>",
         { desc = "CopilotChat | Stop Chat", silent = true }
       )
       vim.keymap.set(
         "n",
-        "<leader>as",
+        "<leader>aS",
         "<cmd>CopilotChatSave<cr>",
         { desc = "CopilotChat | Save Chat History", silent = true }
       )
