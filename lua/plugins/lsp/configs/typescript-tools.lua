@@ -14,7 +14,7 @@ return {
         "fix_all",
         "sort_imports", -- I don't know why it doesn't work now
       },
-    separate_diagnostic_server = false, -- Disable separate diagnostic server
+      separate_diagnostic_server = false, -- Disable separate diagnostic server
       tsserver_file_preferences = {
         includeCompletionsForModuleExports = true,
         includeInlayEnumMemberValueHints = true,

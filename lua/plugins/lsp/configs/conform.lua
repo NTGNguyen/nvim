@@ -1,41 +1,31 @@
 local formatters_by_ft = {
-  lua = { "stylua" },
-  python = {
-    "ruff_fix",
-    "ruff_format",
-  },
-  -- cpp = { "clang_format" },
   -- c = { "clang_format" },
-  -- go = { "gofumpt" },
+  -- cpp = { "clang_format" },
   -- cs = { "csharpier" },
-  sh = { "shfmt" },
-  zsh = { "beautysh" },
-  ["markdown"] = { "prettier", "doctoc" },
+  css = { "prettier" },
+  flow = { "prettier" },
+  go = { "gofumpt" },
+  graphql = { "prettier" },
+  html = { "prettier" },
+  javascript = { "prettier" },
+  javascriptreact = { "prettier" },
+  json = { "prettier" },
+  less = { "prettier" },
+  lua = { "stylua" },
   ["markdown.mdx"] = { "prettier", "doctoc" },
+  markdown = { "prettier", "doctoc" },
   mysql = { "sql_formatter_mysql" },
-  sql = { "sql_formatter" },
+  python = { "ruff_fix", "ruff_format" },
+  scss = { "prettier" },
+  sh = { "shfmt" },
   sqloracle = { "sql_formatter" },
+  sql = { "sql_formatter" },
+  typescript = { "prettier" },
+  typescriptreact = { "prettier" },
+  vue = { "prettier" },
+  yaml = { "yamlfmt" },
+  zsh = { "beautysh" },
 }
-
-local prettier_ft = {
-  "css",
-  "flow",
-  "graphql",
-  "html",
-  "json",
-  "javascriptreact",
-  "javascript",
-  "less",
-  "scss",
-  "typescript",
-  "typescriptreact",
-  "vue",
-  "yaml",
-}
-
-for _, filetype in pairs(prettier_ft) do
-  formatters_by_ft[filetype] = { "prettier" }
-end
 
 local formatters = {
   ["doctoc"] = {
