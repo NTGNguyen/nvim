@@ -250,13 +250,14 @@ M.mason = {
 
     -- Web Development
     "css-lsp",
-    "emmet_language_server",
+    "emmet-language-server",
     "eslint-lsp",
     "html-lsp",
     "js-debug-adapter",
     "prettier",
     "tailwindcss-language-server",
     "typescript-language-server",
+    -- "vtsls",
     -- "deno",
     -- "vue-language-server",
 
