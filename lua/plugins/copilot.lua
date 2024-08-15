@@ -2,6 +2,7 @@
 return {
   {
     "zbirenbaum/copilot.lua",
+    enabled = true,
     build = ":Copilot auth",
     cmd = "Copilot",
     opts = {
@@ -35,66 +36,68 @@ return {
       vim.cmd "Copilot disable"
     end,
   },
-  -- {
-  --   "github/copilot.vim",
-  --   cmd = "Copilot",
-  --   build = ":Copilot setup",
-  --   init = function()
-  --     vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
-  --     vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
-  --     vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
-  --     vim.keymap.set("i", "<M-Right>", "<Plug>(copilot-accept-word)", { desc = "Copilot | Accept Word", silent = true })
-  --     vim.keymap.set(
-  --       "i",
-  --       "<M-C-Right>",
-  --       "<Plug>(copilot-accept-line)",
-  --       { desc = "Copilot | Accept Line", silent = true }
-  --     )
-  --     vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", { desc = "Copilot | Show Next Suggestion", silent = true })
-  --     vim.keymap.set(
-  --       "i",
-  --       "<M-[>",
-  --       "<Plug>(copilot-previous)",
-  --       { desc = "Copilot | Show Previous Suggestion", silent = true }
-  --     )
-  --     vim.g.copilot_filetypes = { ["copilot-chat"] = false }
-  --   end,
-  -- },
+  {
+    "github/copilot.vim",
+    enabled = false,
+    cmd = "Copilot",
+    build = ":Copilot setup",
+    init = function()
+      vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
+      vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
+      vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
+      vim.keymap.set("i", "<M-Right>", "<Plug>(copilot-accept-word)", { desc = "Copilot | Accept Word", silent = true })
+      vim.keymap.set(
+        "i",
+        "<M-C-Right>",
+        "<Plug>(copilot-accept-line)",
+        { desc = "Copilot | Accept Line", silent = true }
+      )
+      vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", { desc = "Copilot | Show Next Suggestion", silent = true })
+      vim.keymap.set(
+        "i",
+        "<M-[>",
+        "<Plug>(copilot-previous)",
+        { desc = "Copilot | Show Previous Suggestion", silent = true }
+      )
+      vim.g.copilot_filetypes = { ["copilot-chat"] = false }
+    end,
+  },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     cmd = {
       "CopilotChat",
-      "CopilotChatOpen",
       "CopilotChatClose",
-      "CopilotChatToggle",
-      "CopilotChatStop",
-      "CopilotChatReset",
-      "CopilotChatSave",
-      "CopilotChatLoad",
-      "CopilotChatDebugInfo",
-      "CopilotChatExplain",
-      "CopilotChatReview",
-      "CopilotChatFix",
-      "CopilotChatOptimize",
-      "CopilotChatDocs",
-      "CopilotChatTests",
-      "CopilotChatFixDiagnostic",
       "CopilotChatCommit",
       "CopilotChatCommitStaged",
+      "CopilotChatDebugInfo",
+      "CopilotChatDocs",
+      "CopilotChatExplain",
+      "CopilotChatFix",
+      "CopilotChatFixDiagnostic",
+      "CopilotChatLoad",
+      "CopilotChatModels",
+      "CopilotChatOpen",
+      "CopilotChatOptimize",
+      "CopilotChatReset",
+      "CopilotChatReview",
+      "CopilotChatSave",
+      "CopilotChatStop",
+      "CopilotChatTests",
+      "CopilotChatToggle",
     },
     dependencies = {
       "hrsh7th/nvim-cmp",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
       "zbirenbaum/copilot.lua",
-      -- "github/copilot.vim",
+      "github/copilot.vim",
     },
     opts = {
       allow_insecure = true,
       -- Disable default <tab> completion
       mappings = {
         complete = {
-          insert = "",
+          insert = "<Tab>",
         },
       },
       -- window = {
@@ -106,6 +109,30 @@ return {
       -- },
     },
     init = function()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "solarized",
+        callback = function()
+          vim.api.nvim_set_hl(0, "CopilotSuggestion", {
+            ctermfg = "light_grey",
+            fg = "light_grey",
+            force = true,
+          })
+        end,
+      })
+
+      -- https://github.com/CopilotC-Nvim/CopilotChat.nvim#customizing-buffers
+      vim.api.nvim_create_autocmd("BufEnter", {
+        desc = "CopilotChat Autocommand",
+        pattern = "copilot-*",
+        callback = function()
+          vim.opt_local.relativenumber = true
+          -- C-p to print last response
+          vim.keymap.set("n", "<C-p>", function()
+            print(require("CopilotChat").response())
+          end, { buffer = true, remap = true })
+        end,
+      })
+
       vim.keymap.set({ "n", "v" }, "<leader>aq", function()
         local input = vim.fn.input "Quick Chat: "
         if input ~= "" then
@@ -143,6 +170,12 @@ return {
         "<leader>al",
         "<cmd>CopilotChatLoad<cr>",
         { desc = "CopilotChat | Load Chat History", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>am",
+        "<cmd>CopilotChatModels<cr>",
+        { desc = "CopilotChat | Select Model", silent = true }
       )
     end,
     config = function(_, opts)

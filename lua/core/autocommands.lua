@@ -372,36 +372,6 @@ autocmd("FileType", {
   desc = "Start Godot LSP",
 })
 
-local copilot = augroup("copilot", { clear = true })
-
-autocmd("ColorScheme", {
-  pattern = "solarized",
-  callback = function()
-    vim.api.nvim_set_hl(0, "CopilotSuggestion", {
-      ctermfg = "light_grey",
-      fg = "light_grey",
-      force = true,
-    })
-  end,
-  group = copilot,
-})
-
-local copilotchat = augroup("copilotchat", { clear = true })
-
--- Source: https://github.com/CopilotC-Nvim/CopilotChat.nvim#customizing-buffers
-autocmd("BufEnter", {
-  desc = "CopilotChat Autocommand",
-  pattern = "copilot-*",
-  callback = function()
-    vim.opt_local.relativenumber = true
-    -- C-p to print last response
-    vim.keymap.set("n", "<C-p>", function()
-      print(require("CopilotChat").response())
-    end, { buffer = true, remap = true })
-  end,
-  group = copilotchat,
-})
-
 local settings = augroup("settings", { clear = true })
 
 -- Docs about change vim cursor in terminal: https://neovim.io/doc/user/faq.html#faq
