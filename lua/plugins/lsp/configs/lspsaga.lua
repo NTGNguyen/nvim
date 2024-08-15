@@ -154,8 +154,4 @@ return {
       },
     },
   },
-  config = function(_, opts)
-    -- dofile(vim.g.base46_cache .. "lspsaga") -- Not to use this because it's suck on transparent
-    require("lspsaga").setup(opts)
-  end,
 }

@@ -2,6 +2,7 @@
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
+  enabled = false,
   keys = {
     {
       "<leader>mp",
@@ -12,6 +13,7 @@ return {
     },
   },
   build = function()
+    require("lazy").load { plugins = { "markdown-preview.nvim" } }
     vim.fn["mkdp#util#install"]()
   end,
   ft = "markdown",

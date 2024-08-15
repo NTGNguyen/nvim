@@ -80,8 +80,6 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   config = function(_, opts)
-    dofile(vim.g.base46_cache .. "cmp")
-
     table.insert(opts.sources, 1, { name = "copilot" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
