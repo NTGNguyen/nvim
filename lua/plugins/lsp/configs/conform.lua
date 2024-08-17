@@ -10,6 +10,7 @@ local formatters_by_ft = {
   javascript = { "prettier" },
   javascriptreact = { "prettier" },
   json = { "prettier" },
+  jsonc = { "prettier" },
   less = { "prettier" },
   lua = { "stylua" },
   ["markdown.mdx"] = { "prettier", "doctoc" },
