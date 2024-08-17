@@ -115,14 +115,14 @@ autocmd("BufEnter", {
   desc = "Disable New Line Comment",
 })
 
-autocmd("FileType", {
-  pattern = { "c", "cpp", "py", "java", "cs" },
-  callback = function()
-    vim.bo.shiftwidth = 4
-  end,
-  group = general,
-  desc = "Set shiftwidth to 4 in these filetypes",
-})
+-- autocmd("FileType", {
+--   pattern = { "c", "cpp", "py", "java", "cs" },
+--   callback = function()
+--     vim.bo.shiftwidth = 4
+--   end,
+--   group = general,
+--   desc = "Set shiftwidth to 4 in these filetypes",
+-- })
 
 -- autocmd("BufEnter", {
 --   callback = function()
@@ -237,32 +237,33 @@ autocmd("FileType", {
   desc = "Disable animation in these filetype",
 })
 
-autocmd("FileType", {
-  desc = "Set tab width to 2 for specific filetypes",
-  pattern = {
-    "html",
-    "htmlx",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "jsonc",
-    "markdown",
-    "toml",
-    "typescript",
-    "typescriptreact",
-    "yaml",
-  },
-  command = "set tabstop=2 shiftwidth=2 expandtab",
-  group = general,
-})
+-- autocmd("FileType", {
+--   desc = "Set tab width to 2 for specific filetypes",
+--   pattern = {
+--     "*.html",
+--     "*.htmlx",
+--     "*.js",
+--     "*.json",
+--     "*.jsonc",
+--     "*.jsx",
+--     "*.md",
+--     "*.toml",
+--     "*.ts",
+--     "*.tsx",
+--     "*.yaml",
+--     "*.yml",
+--   },
+--   command = "set tabstop=2 shiftwidth=2 expandtab",
+--   group = general,
+-- })
 
 autocmd("FileType", {
   desc = "Set tab width to 4 for specific filetypes",
   pattern = {
-    "c",
-    "cpp",
-    "cs",
-    "py",
+    "*.c",
+    "*.cpp",
+    "*.cs",
+    "*.py",
   },
   command = "set tabstop=4 shiftwidth=4 expandtab",
   group = general,
