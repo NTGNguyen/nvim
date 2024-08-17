@@ -23,7 +23,7 @@ return {
     settings = {
       expose_as_code_action = {
         "fix_all",
-        "sort_imports", -- I don't know why it doesn't work now
+        "organize_imports",
       },
       separate_diagnostic_server = false, -- Disable separate diagnostic server
       tsserver_file_preferences = {
@@ -37,6 +37,8 @@ return {
         includeInlayVariableTypeHints = true,
         preferGoToSourceDefinition = false,
         quotePreference = "auto",
+        importModuleSpecifierEnding = "non-relative",
+        importModuleSpecifierPreference = "non-relative",
       },
     },
   },
