@@ -14,10 +14,12 @@ return {
       bash = { "shellcheck" },
       ghaction = { "actionlint" },
       javascript = { "eslint" },
+      javascriptreact = { "eslint" },
       latex = { "vale" },
       python = { "ruff" },
       sh = { "shellcheck" },
       typescript = { "eslint" },
+      typescriptreact = { "eslint" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {

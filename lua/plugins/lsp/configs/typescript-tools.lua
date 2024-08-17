@@ -4,6 +4,17 @@
 return {
   "pmizio/typescript-tools.nvim",
   event = "User FilePost",
+  init = function()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = {
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+      },
+      command = ":TSToolsSortImports sync",
+    })
+  end,
   opts = {
     on_attach = function(client)
       client.server_capabilities.documentFormattingProvider = false
