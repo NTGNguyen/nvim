@@ -2,7 +2,7 @@
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
-  enabled = false,
+  enabled = true,
   keys = {
     {
       "<leader>mp",
