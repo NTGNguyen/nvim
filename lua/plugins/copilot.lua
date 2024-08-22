@@ -155,7 +155,7 @@ return {
         { desc = "CopilotChat | Toggle Chat", silent = true }
       )
       vim.keymap.set("n", "<leader>as", "<cmd>CopilotChatStop<cr>", { desc = "CopilotChat | Stop Chat", silent = true })
-      vim.keymap.set("n", "<leader>as", "<cmd>CopilotChatReset<cr>", { desc = "CopilotChat | Reset", silent = true })
+      vim.keymap.set("n", "<leader>ar", "<cmd>CopilotChatReset<cr>", { desc = "CopilotChat | Reset", silent = true })
       vim.keymap.set(
         "n",
         "<leader>aS",
