@@ -107,16 +107,16 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "General | Better Up", expr = true, silent = true })
 
 -- Go to upper window
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "General | Go to upper window", silent = true })
+vim.keymap.set({ "n", "v" }, "<C-j>", "<C-w>j", { desc = "General | Go to upper window", silent = true })
 
 -- Go to lower window
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "General | Go to lower window", silent = true })
+vim.keymap.set({ "n", "v" }, "<C-k>", "<C-w>k", { desc = "General | Go to lower window", silent = true })
 
 -- Go to left window
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "General | Go to left window", silent = true })
+vim.keymap.set({ "n", "v" }, "<C-h>", "<C-w>h", { desc = "General | Go to left window", silent = true })
 
 -- Go to right window
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent = true })
+vim.keymap.set({ "n", "v" }, "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent = true })
 
 -- Close window
 vim.keymap.set("n", "<leader>w", function()
