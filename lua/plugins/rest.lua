@@ -1,6 +1,7 @@
 return {
   "rest-nvim/rest.nvim",
   -- ft = "http",
+  cond = vim.fn.has "win32" == 0,
   dependencies = {
     {
       "vhyrro/luarocks.nvim",
