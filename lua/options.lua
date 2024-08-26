@@ -73,6 +73,16 @@ vim.opt.shortmess:append "Ac" -- Disable asking
 vim.opt.whichwrap:append "<>[]hl"
 -- vim.opt.iskeyword:append "-"
 
+-- Replace builtin grep with ripgrep
+if vim.fn.executable "rg" then
+  local ignore_file_path = vim.fn.getenv "HOME" .. "/.config/ripgrep/ignore"
+  if vim.fn.filereadable(ignore_file_path) then
+    vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file " .. ignore_file_path
+  else
+    vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case"
+  end
+end
+
 for name, value in pairs(options) do
   vim.opt[name] = value
 end
