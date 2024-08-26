@@ -394,3 +394,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | Clear Search Hi
 
 -- Select All
 -- vim.keymap.set("n", "<leader>A", "ggVG", { desc = "General | Select All", silent = true })
+
+-- Quick Fix
+vim.keymap.set("n", "]c", "<cmd>cnext<cr>", { desc = "General | Quick Fix Next", silent = true })
+vim.keymap.set("n", "[c", "<cmd>cprev<cr>", { desc = "General | Quick Fix Previous", silent = true })
+
+-- Location List
+vim.keymap.set("n", "]l", "<cmd>lnext<cr>", { desc = "General | Location List Next", silent = true })
+vim.keymap.set("n", "[l", "<cmd>lprev<cr>", { desc = "General | Location List Previous", silent = true })
