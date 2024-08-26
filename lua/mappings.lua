@@ -402,3 +402,7 @@ vim.keymap.set("n", "[c", "<cmd>cprev<cr>", { desc = "General | Quick Fix Previo
 -- Location List
 vim.keymap.set("n", "]l", "<cmd>lnext<cr>", { desc = "General | Location List Next", silent = true })
 vim.keymap.set("n", "[l", "<cmd>lprev<cr>", { desc = "General | Location List Previous", silent = true })
+
+-- Sort in Visual Mode
+vim.keymap.set("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "General | Sort", silent = true })
+vim.keymap.set("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "General | Sort Unique", silent = true })
