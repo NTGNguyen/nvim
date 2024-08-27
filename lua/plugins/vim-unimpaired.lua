@@ -5,5 +5,5 @@
 return {
   "tpope/vim-unimpaired",
   enabled = false,
-  event = "User FilePost",
+  event = "BufFilePost",
 }

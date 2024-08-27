@@ -3,7 +3,7 @@
 return {
   "declancm/cinnamon.nvim",
   enabled = false,
-  event = "User FilePost",
+  event = "BufReadPost",
   opts = {
     keymaps = {
       basic = true, -- Enable the basic keymaps

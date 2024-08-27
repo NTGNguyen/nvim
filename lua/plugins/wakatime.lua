@@ -5,5 +5,5 @@
 -- To disable, remove "~./wakatime.cfg".
 return {
   "wakatime/vim-wakatime",
-  event = vim.fn.filereadable(vim.fn.getenv "HOME" .. "/.wakatime.cfg") == 1 and "User FilePost" or nil,
+  event = vim.fn.filereadable(vim.fn.getenv "HOME" .. "/.wakatime.cfg") == 1 and "BufReadPost" or nil,
 }

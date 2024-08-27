@@ -74,7 +74,7 @@ local formatters = {
 return {
   -- NOTE: Formatting
   "stevearc/conform.nvim",
-  event = "User FilePost",
+  event = "BufReadPost",
   opts = {
     default_format_opts = {
       lsp_format = "fallback",
