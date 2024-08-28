@@ -67,7 +67,6 @@ end
 function RunCode()
   local file_extension = vim.fn.expand "%:e"
   local selected_cmd = ""
-  -- local term_cmd = "bot 10 new | term "
   local term_cmd = "bot 20 new | term "
   local supported_filetypes = {
     c = {
