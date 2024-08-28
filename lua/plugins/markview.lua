@@ -1,9 +1,18 @@
+local fts = {
+  "Avante",
+  "markdown",
+  "norg",
+  "org",
+  "rmd",
+  "vimwiki",
+}
+
 ---@type NvPluginSpec
 -- NOTE: Better Markdown
 return {
   "OXY2DEV/markview.nvim",
   -- lazy = false, -- Recommended
-  ft = "markdown", -- If you decide to lazy-load anyway
+  ft = fts,
   dependencies = {
     -- You will not need this if you installed the
     -- parsers manually
@@ -19,12 +28,15 @@ return {
       "<leader>mv",
       "<cmd>Markview<cr>",
       desc = "Markdown | Toggle View",
-      ft = "markdown",
+      ft = fts,
       silent = true,
     },
   },
+  opts = {
+    filetypes = fts,
+  },
   config = function(_, opts)
     require("markview").setup(opts)
-    vim.cmd "Markview disableAll"
+    -- vim.cmd "Markview disableAll"
   end,
 }
