@@ -53,6 +53,29 @@ return {
       "<cmd>lua require'dap'.run_last()<cr>",
       { desc = "DAP | Run Last", silent = true }
     )
+
+    vim.keymap.set(
+      "n",
+      "<leader>dt",
+      "<cmd>lua require'dap'.terminate()<cr>",
+      { desc = "DAP | Terminte", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>dD",
+      "<cmd>lua require'dap'.disconnect()<cr>",
+      { desc = "DAP | Disconnect", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>df",
+      "<cmd>lua require'dapui'.float_element()<cr>",
+      { desc = "DAP | Float Element", silent = true }
+    )
+
+    vim.keymap.set("n", "<leader>de", "<cmd>lua require'dapui'.eval()<cr>", { desc = "DAP | Eval", silent = true })
   end,
   dependencies = {
     { "nvim-neotest/nvim-nio" },
