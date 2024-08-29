@@ -48,6 +48,9 @@ M.add = {
   NotificationInfo = { fg = "green", bg = "one_bg" },
   NotificationWarning = { fg = "yellow", bg = "one_bg" },
   NotificationError = { fg = "red", bg = "one_bg" },
+
+  -- Colorful-Winsep
+  NvimSeparator = { fg = "orange" },
 }
 
 return M
