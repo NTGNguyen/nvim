@@ -1,6 +1,8 @@
 ---@type NvPluginSpec
+-- NOTE: For generating Lorem
 return {
   "derektata/lorem.nvim",
+  enabled = true,
   dependencies = {
     "nvim-telescope/telescope.nvim",
   },

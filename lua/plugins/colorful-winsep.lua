@@ -6,6 +6,5 @@ return {
   event = "WinLeave",
   opts = {
     -- Highlight group is defined in highlight.lua
-    -- Add the plugin opts here
   },
 }
