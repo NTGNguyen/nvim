@@ -64,7 +64,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    enabled = false,
+    enabled = true,
     branch = "canary",
     cmd = {
       "CopilotChat",

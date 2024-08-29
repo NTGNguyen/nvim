@@ -2,7 +2,7 @@
 -- NOTE: AI chat
 return {
   "yetone/avante.nvim",
-  enabled = true,
+  enabled = false,
   build = false
     and (
       vim.fn.has "win32" == 0 and (vim.fn.executable "make" and "make" or false)
