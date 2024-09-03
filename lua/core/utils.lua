@@ -129,6 +129,9 @@ function RunCode()
     rs = {
       default = "rustc % && $fileBase",
     },
+    sh = {
+      default = "bash %",
+    },
     ts = {
       default = "tsc % && node $fileBase",
     },
