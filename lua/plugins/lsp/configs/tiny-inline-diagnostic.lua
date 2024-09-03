@@ -3,5 +3,9 @@
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
   event = "BufReadPost",
-  opts = {},
+  opts = {
+    overflow = {
+      mode = "oneline", -- wrap, none, oneline
+    },
+  },
 }
