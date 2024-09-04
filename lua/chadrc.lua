@@ -342,7 +342,7 @@ M.mason = {
     "shfmt",
 
     -- Docker
-    "docker_compose_language_service",
+    "docker-compose-language-service",
     "dockerfile-language-server",
 
     -- Database
