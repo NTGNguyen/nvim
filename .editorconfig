@@ -9,4 +9,4 @@ insert_final_newline = unset
 indent_style = space
 indent_size = 2
 tab_width = 2
-end_of_line = lf
+# end_of_line = lf
