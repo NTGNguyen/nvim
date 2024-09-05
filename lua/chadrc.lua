@@ -325,7 +325,8 @@ M.mason = {
     -- "gopls",
 
     -- C#
-    -- "omnisharp",
+    "csharpier",
+    "omnisharp",
     -- "omnisharp-mono",
 
     -- Markdown
