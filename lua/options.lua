@@ -54,6 +54,7 @@ local options = {
 }
 
 local global = {
+  markdown_recommended_style = 0, -- Disable recommend style to make tab space 2 in markdown
   mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
   snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate", -- path to snipmate snippets
   vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets/vscode", -- path to vscode snippets
