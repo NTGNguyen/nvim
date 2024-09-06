@@ -321,13 +321,13 @@ M.mason = {
     "ruff",
     -- "basedpyright",
 
+    -- C#
+    -- "csharpier",
+    -- "omnisharp",
+    -- "omnisharp-mono",
+
     -- Go
     -- "gopls",
-
-    -- C#
-    "csharpier",
-    "omnisharp",
-    -- "omnisharp-mono",
 
     -- Markdown
     "doctoc",
@@ -338,7 +338,6 @@ M.mason = {
     -- Shell
     "bash-language-server",
     "beautysh",
-    vim.fn.has "win32" == 1 and "powershell-editor-services" or nil,
     "shellcheck",
     "shfmt",
 
@@ -354,6 +353,20 @@ M.mason = {
     vim.fn.executable "hyprland" and "hyprls" or nil,
   },
 }
+
+-- NOTE: Extend NvChad Mason
+if vim.fn.has "win32" == 1 then
+  --  On Windows
+  vim.list_extend(M.mason, {
+    -- C#
+    "csharpier",
+    "omnisharp",
+    -- "omnisharp-mono",
+
+    -- Shell
+    "powershell-editor-services",
+  })
+end
 
 M.lsp = { signature = false }
 
