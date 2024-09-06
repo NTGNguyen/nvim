@@ -24,8 +24,9 @@ return {
       "DBUIFindBuffer",
     },
     init = function()
-      vim.g.db_ui_use_nerd_fonts = 1
       -- vim.g.db_ui_execute_on_save = 0
+      vim.g.db_ui_use_nerd_fonts = 1
+      vim.g.vim_dadbod_completion_mark = ""
 
       vim.keymap.set("n", "<leader>ub", function()
         if vim.g.nvdash_displayed then
