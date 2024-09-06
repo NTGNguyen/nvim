@@ -264,6 +264,7 @@ M.ui = {
 
 M.cheatsheet = { theme = "grid" } -- simple/grid
 
+-- NOTE: NvChad auto recognise from Conform
 M.mason = {
   cmd = true,
   -- Use names from mason.nvim
@@ -354,7 +355,7 @@ M.mason = {
   },
 }
 
--- NOTE: Extend NvChad Mason
+-- NOTE: Extend NvChad Mason with condition
 if vim.fn.has "win32" == 1 then
   --  On Windows
   vim.list_extend(M.mason, {

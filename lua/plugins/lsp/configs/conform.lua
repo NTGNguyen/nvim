@@ -1,7 +1,7 @@
 local formatters_by_ft = {
   -- c = { "clang_format" },
   -- cpp = { "clang_format" },
-  -- cs = { "csharpier" },
+  cs = { "csharpier" },
   css = { "prettier" },
   flow = { "prettier" },
   go = { "gofumpt" },
@@ -24,7 +24,7 @@ local formatters_by_ft = {
   typescript = { "prettier" },
   typescriptreact = { "prettier" },
   vue = { "prettier" },
-  yaml = { "yamlfmt" },
+  -- yaml = { "yamlfmt" }, -- yaml-language-server handle formatting
   zsh = { "beautysh" },
 }
 
