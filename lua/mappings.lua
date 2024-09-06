@@ -251,7 +251,7 @@ vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-j>", { desc = "General | Go to upper
 vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-k>", { desc = "General | Go to lower window(Terminal)", silent = true })
 
 -- Go to left window (Terminal)
-vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", {  desc = "General | Go to left window(Terminal)", silent = true })
+vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", { desc = "General | Go to left window(Terminal)", silent = true })
 
 -- Go to right window (Terminal)
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>", { desc = "General | Go to right window(Terminal)", silent = true })
@@ -416,5 +416,18 @@ vim.keymap.set("n", "]l", "<cmd>lnext<cr>", { desc = "General | Location List Ne
 vim.keymap.set("n", "[l", "<cmd>lprev<cr>", { desc = "General | Location List Previous", silent = true })
 
 -- Sort in Visual Mode
-vim.keymap.set("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "General | Sort", silent = true })
-vim.keymap.set("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "General | Sort Unique", silent = true })
+vim.keymap.set("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
+vim.keymap.set("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
+
+-- Add Executable Permission for File (chmod)
+vim.keymap.set("n", "<leader>ux", function()
+  if vim.fn.has "unix" == 0 then
+    return vim.notify "This isn't available for non UNIX based OS"
+  end
+  vim.ui.input({ prompt = "Enter filename", default = "%" }, function(filename)
+    if filename == nil then
+      return
+    end
+    vim.cmd("!chmod +x " .. filename)
+  end)
+end, { desc = "Utils | Add Executable Permission", silent = true })
