@@ -5,15 +5,17 @@ return {
   "pmizio/typescript-tools.nvim",
   event = "BufReadPost",
   init = function()
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = {
-        "*.js",
-        "*.jsx",
-        "*.ts",
-        "*.tsx",
-      },
-      command = ":TSToolsSortImports sync",
-    })
+    -- NOTE: Just let prettier plugin do it
+
+    -- vim.api.nvim_create_autocmd("BufWritePre", {
+    --   pattern = {
+    --     "*.js",
+    --     "*.jsx",
+    --     "*.ts",
+    --     "*.tsx",
+    --   },
+    --   command = ":TSToolsSortImports sync",
+    -- })
   end,
   opts = {
     on_attach = function(client)
