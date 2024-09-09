@@ -43,7 +43,7 @@ return {
         "jdtls",
         "ruff",
         "rust_analyzer",
-        "tsserver",
+        "ts_ls",
       }
 
       mason_lspconfig.setup_handlers {
