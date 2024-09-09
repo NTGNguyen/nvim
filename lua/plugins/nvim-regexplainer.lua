@@ -7,10 +7,9 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
-    mappings = {
-      toggle = "gR",
-    },
     popup = {
+      enter = true,
+      focusable = true,
       border = {
         style = vim.g.border_enabled and "rounded" or "single",
       },
@@ -18,8 +17,14 @@ return {
   },
   cmd = {
     "RegexplainerToggle",
+    "RegexplainerShowPopup",
   },
   init = function()
-    vim.keymap.set("n", "gR", "<cmd>RegexplainerToggle<cr>", { desc = "Regexplainer | Toggle", silent = true })
+    vim.keymap.set(
+      "n",
+      "<leader>ur",
+      "<cmd>RegexplainerShowPopup<cr>",
+      { desc = "Regexplainer | Toggle", silent = true }
+    )
   end,
 }
