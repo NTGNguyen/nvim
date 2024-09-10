@@ -1,5 +1,5 @@
 return {
-  cmd = { "omnisharp" },
+  cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
 
   settings = {
     FormattingOptions = {
@@ -22,7 +22,7 @@ return {
       EnableImportCompletion = true,
       -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
       -- true
-      AnalyzeOpenDocumentsOnly = false,
+      AnalyzeOpenDocumentsOnly = nil,
     },
   },
 }
