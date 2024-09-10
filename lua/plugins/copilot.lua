@@ -17,10 +17,25 @@ return {
       },
     },
     init = function()
-      vim.keymap.set("n", "<leader>at", "<cmd>Copilot toggle<cr>", { desc = "Copilot | Toggle", silent = true })
-      vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
-      vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
-      vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
+      vim.keymap.set(
+        "n",
+        "<leader>at",
+        "<cmd>Copilot toggle<cr>",
+        { desc = "Copilot | Toggle Completion", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>ad",
+        "<cmd>Copilot disable<cr>",
+        { desc = "Copilot | Disable Completion", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>ae",
+        "<cmd>Copilot enable<cr>",
+        { desc = "Copilot | Enable Completion", silent = true }
+      )
+      vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Toggle Panel", silent = true })
 
       -- NOTE: Itegrate to nvimp-cmp so that we don't use those keymaps
 
@@ -42,9 +57,19 @@ return {
     cmd = "Copilot",
     build = ":Copilot setup",
     init = function()
-      vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Copilot | Disable", silent = true })
-      vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Copilot | Enable", silent = true })
-      vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Panel", silent = true })
+      vim.keymap.set(
+        "n",
+        "<leader>ad",
+        "<cmd>Copilot disable<cr>",
+        { desc = "Copilot | Disable Completion", silent = true }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>ae",
+        "<cmd>Copilot enable<cr>",
+        { desc = "Copilot | Enable Completion", silent = true }
+      )
+      vim.keymap.set("n", "<leader>aP", "<cmd>Copilot panel<cr>", { desc = "Copilot | Toggle Panel", silent = true })
       vim.keymap.set("i", "<M-Right>", "<Plug>(copilot-accept-word)", { desc = "Copilot | Accept Word", silent = true })
       vim.keymap.set(
         "i",
@@ -64,7 +89,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    enabled = true,
+    enabled = false,
     branch = "canary",
     cmd = {
       "CopilotChat",

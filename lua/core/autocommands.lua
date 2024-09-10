@@ -277,6 +277,8 @@ local lazyvim = augroup("lazyvim", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   group = lazyvim,
   pattern = {
+    "Avante",
+    "AvanteInput",
     "PlenaryTestPopup",
     "Regexplainer",
     "checkhealth",
