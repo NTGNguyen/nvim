@@ -331,9 +331,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     if status_ok then
       vim.cmd "NeoscrollEnableBufferPM"
     end
-    -- vim.schedule(function()
-    --   vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
-    -- end)
+    vim.schedule(function()
+      vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
+    end)
   end,
 })
 
