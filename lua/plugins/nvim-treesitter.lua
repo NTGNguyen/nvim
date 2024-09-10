@@ -97,10 +97,10 @@ return {
       swap = {
         enable = true,
         swap_next = {
-          ["sa"] = "@parameter.inner",
+          ["sn"] = "@parameter.inner",
         },
         swap_previous = {
-          ["sA"] = "@parameter.inner",
+          ["sp"] = "@parameter.inner",
         },
       },
       move = {
