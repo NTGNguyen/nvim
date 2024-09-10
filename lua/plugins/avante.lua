@@ -3,11 +3,7 @@
 return {
   "yetone/avante.nvim",
   enabled = true,
-  build = true
-    and (
-      vim.fn.has "win32" == 0 and (vim.fn.executable "make" and "make" or false)
-      or "pwsh -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
-    ), -- This is Optional, only if you want to use tiktoken_core to calculate tokens count
+  build = vim.fn.has "win32" == 0 and "make" or "pwsh -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count, but may be required on Windows
   cmd = {
     "AvanteAsk",
     "AvanteRefresh",
@@ -18,26 +14,6 @@ return {
     vim.keymap.set("v", "<leader>ar", "<cmd>AvanteRefresh<cr>", { desc = "AI | Refresh", silent = true })
     vim.keymap.set({ "n", "v" }, "<leader>ae", "<cmd>AvanteEdit<cr>", { desc = "AI | Edit", silent = true })
   end,
-  -- keys = {
-  --   {
-  --     "<leader>ac",
-  --     "<cmd>AvanteAsk<cr>",
-  --     desc = "Avante | Chat",
-  --     silent = true,
-  --   },
-  --   {
-  --     "<leader>ar",
-  --     "<cmd>AvanteRefresh<cr>",
-  --     desc = "Avante | Refresh",
-  --     silent = true,
-  --   },
-  --   {
-  --     "<leader>ar",
-  --     "<cmd>AvanteEdit<cr>",
-  --     desc = "Avante | Edit",
-  --     silent = true,
-  --   },
-  -- },
   opts = {
     provider = "copilot",
     behaviour = {
