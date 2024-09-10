@@ -11,4 +11,5 @@ return {
   init = function()
     vim.keymap.set("n", "<leader>ut", "<cmd>TSJToggle<cr>", { desc = "TreeSJ | Toggle", silent = true })
   end,
+  config = true,
 }
