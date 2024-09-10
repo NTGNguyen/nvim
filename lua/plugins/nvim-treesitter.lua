@@ -58,9 +58,6 @@ return {
       -- end,
 
       disable = function()
-        if vim.bo.filetype == "bigfile" then
-          return true
-        end
         -- Disable for chezmoi template file: https://github.com/alker0/chezmoi.vim#-can-i-use-nvim-treesitter-for-my-chezmoi-template
         if string.find(vim.bo.filetype, "chezmoitmpl") then
           return true
