@@ -94,7 +94,13 @@ return {
     },
     auto_install = vim.fn.executable "tree-sitter-cli" == 1,
     indent = {
-      enable = false,
+      enable = true,
+      disable = {
+        "markdown", -- indentation at bullet points is worse
+        -- "javascript", -- some wrong indentation when using `o`
+        -- "typescript",
+        "yaml", -- wrong indentation in list continuation
+      },
     },
     textobjects = {
       swap = {
