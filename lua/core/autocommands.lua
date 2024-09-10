@@ -327,6 +327,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.minianimate_disable = true
     vim.b.cinnamon_disable = true
     vim.b.navic_lazy_update_context = true
+    vim.b.matchup_matchparen_enabled = 0
     local status_ok, _ = pcall(require, "neoscroll")
     if status_ok then
       vim.cmd "NeoscrollEnableBufferPM"
