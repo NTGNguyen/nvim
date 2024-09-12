@@ -1,6 +1,6 @@
 return {
   filetypes = {
-    -- NOTE: Those commented filetypes use tsserver.
+    -- NOTE: Those commented filetypes use "ts_ls".
     -- "javascript",
     -- "javascriptreact",
     -- "javascript.jsx",
