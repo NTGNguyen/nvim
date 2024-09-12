@@ -36,7 +36,7 @@ local highlights = require "highlights"
 M.ui = {
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
-    style = "atom", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
   },
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
