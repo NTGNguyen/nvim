@@ -6,4 +6,11 @@ return {
     "NvChad/nvterm",
     enabled = false,
   },
+  {
+    "NvChad/ui",
+  },
+  { "nvchad/volt" },
+  {
+    "nvchad/minty",
+  },
 }
