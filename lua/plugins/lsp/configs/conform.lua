@@ -1,7 +1,7 @@
 local formatters_by_ft = {
   -- c = { "clang_format" },
   -- cpp = { "clang_format" },
-  -- cs = { "csharpier" },
+  cs = { "clang_format" },
   css = { "prettier" },
   flow = { "prettier" },
   go = { "gofumpt" },

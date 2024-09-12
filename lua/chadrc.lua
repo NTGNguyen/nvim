@@ -292,9 +292,9 @@ M.mason = {
     -- "intelephense",
 
     -- C/C++
+    "clang-format",
     "clangd",
     "codelldb",
-    -- "clang-format",
     -- "cpptools",
 
     -- CMake
@@ -339,6 +339,7 @@ M.mason = {
     -- Shell
     "bash-language-server",
     "beautysh",
+    "powershell-editor-services",
     "shellcheck",
     "shfmt",
 
@@ -351,23 +352,9 @@ M.mason = {
     -- "sqls",
 
     -- Others
-    vim.fn.executable "hyprland" and "hyprls" or nil,
+    -- vim.fn.executable "hyprland" and "hyprls" or nil,
   },
 }
-
--- NOTE: Extend NvChad Mason with condition
-if vim.fn.has "win32" == 1 then
-  --  On Windows
-  vim.list_extend(M.mason, {
-    -- C#
-    "csharpier",
-    "omnisharp",
-    -- "omnisharp-mono",
-
-    -- Shell
-    "powershell-editor-services",
-  })
-end
 
 M.lsp = { signature = false }
 
