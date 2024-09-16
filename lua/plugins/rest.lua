@@ -1,19 +1,7 @@
 return {
   "rest-nvim/rest.nvim",
-  -- ft = "http",
-  cond = vim.fn.has "win32" == 0,
+  name = "rest-nvim",
   dependencies = {
-    {
-      "vhyrro/luarocks.nvim",
-      opts = {
-        rocks = {
-          "lua-curl",
-          "nvim-nio",
-          "mimetypes",
-          "xml2lua",
-        },
-      },
-    },
     "nvim-telescope/telescope.nvim",
     opts = {
       extensions_list = { "rest" },
@@ -28,7 +16,5 @@ return {
     { "<leader>AR", "<cmd>Rest result<cr>", desc = "Rest | Result", ft = "http", silent = true },
   },
   opts = {},
-  config = function(_, opts)
-    require("rest-nvim").setup(opts)
-  end,
+  config = true,
 }
