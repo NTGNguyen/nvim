@@ -1,10 +1,12 @@
 --NOTE: Supertab setup referenced from LazyVim documentation
 -- Supertab from LazyVim: https://www.lazyvim.org/configuration/recipes#supertab
+-- Suppertab from cmp: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
 -- Copilot tab completion: https://github.com/zbirenbaum/copilot-cmp?tab=readme-ov-file#tab-completion-configuration-highly-recommended
 -- Neogen tab cycling: https://github.com/danymat/neogen?tab=readme-ov-file#default-cycling-support
 
 local setup_supertab_forward = function()
   local cmp = require "cmp"
+  local luasnip = require "luasnip"
 
   local has_words_before = function()
     unpack = unpack or table.unpack
@@ -16,10 +18,8 @@ local setup_supertab_forward = function()
     if cmp.visible() then
       -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
       cmp.select_next_item()
-    elseif vim.snippet.active { direction = 1 } then
-      vim.schedule(function()
-        vim.snippet.jump(1)
-      end)
+    elseif luasnip.locally_jumpable(1) then
+      luasnip.jump(1)
     elseif has_words_before() then
       cmp.complete()
     else
@@ -30,13 +30,13 @@ end
 
 local setup_supertab_backward = function()
   local cmp = require "cmp"
+  local luasnip = require "luasnip"
+
   return cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_prev_item()
-    elseif vim.snippet.active { direction = -1 } then
-      vim.schedule(function()
-        vim.snippet.jump(-1)
-      end)
+    elseif luasnip.locally_jumpable(-1) then
+      luasnip.jump(-1)
     else
       fallback()
     end
@@ -62,6 +62,25 @@ local setup_toggle_autocomplete_menu = function()
       end
     end,
   }
+end
+
+local setup_cr = function()
+  local cmp = require "cmp"
+  local luasnip = require "luasnip"
+
+  return cmp.mapping(function(fallback)
+    if cmp.visible() then
+      if luasnip.expandable() then
+        luasnip.expand()
+      else
+        cmp.confirm {
+          select = true,
+        }
+      end
+    else
+      fallback()
+    end
+  end)
 end
 
 ---@type NvPluginSpec
@@ -93,7 +112,7 @@ return {
       ["<C-Space>"] = setup_toggle_autocomplete_menu(),
       ["<Down>"] = require("cmp").mapping.select_next_item(),
       ["<Up>"] = require("cmp").mapping.select_prev_item(),
-      -- ["<CR>"] = require("cmp").mapping.confirm { select = false },
+      ["<CR>"] = setup_cr(),
     })
 
     -- opts.preselect = require("cmp").PreselectMode.None -- Disable Enter to select without choosing suggestion. Config along with mapping["<CR>"]
