@@ -117,6 +117,9 @@ function RunCode()
     pl = {
       default = "perl %",
     },
+    ps1 = {
+      default = vim.fn.executable "pwsh" == 1 and "pwsh %" or "powershell %",
+    },
     py = {
       default = vim.fn.executable "python" == 1 and "python %" or "python3 %",
     },
