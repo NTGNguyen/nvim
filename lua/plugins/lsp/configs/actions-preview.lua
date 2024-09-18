@@ -18,9 +18,7 @@ return {
   },
   config = function()
     require("actions-preview").setup {
-      highlight_command = {
-        vim.fn.has "win32" == 0 and require("actions-preview.highlight").delta(),
-      },
+      highlight_command = vim.fn.has "win32" == 0 and { require("actions-preview.highlight").delta() } or nil,
     }
   end,
 }
