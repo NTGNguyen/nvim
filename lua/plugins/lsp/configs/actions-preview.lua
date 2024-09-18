@@ -2,6 +2,9 @@
 -- NOTE: Fully customizable previewer for LSP code actions.
 return {
   "aznhe21/actions-preview.nvim",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+  },
   keys = {
     {
       "<leader>la",
@@ -13,4 +16,11 @@ return {
       silent = true,
     },
   },
+  config = function()
+    require("actions-preview").setup {
+      highlight_command = {
+        vim.fn.has "win32" == 1 and require("actions-preview.highlight").delta(),
+      },
+    }
+  end,
 }
