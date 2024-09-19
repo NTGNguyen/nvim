@@ -53,23 +53,6 @@ local options = {
   -- shellxquote = "",
 }
 
-local global = {
-  markdown_recommended_style = 0, -- Disable recommend style to make tab space 2 in markdown
-  mkdp_auto_close = false, -- Don't Exit Preview When Switching Buffers
-  snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate", -- path to snipmate snippets
-  vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets/vscode", -- path to vscode snippets
-  startup_message = false, -- Show startup message
-  random_header = false, -- Show random header
-  skip_ts_context_commentstring_module = true, -- disable treesitter context commentstring
-  toggle_cmp = true, -- enable nvim-cmp
-  ["loaded_node_provider"] = 0, -- disable node provider
-  ["loaded_python3_provider"] = 0, -- disable python3 provider
-  ["loaded_perl_provider"] = 0, -- disable perl provider
-  ["loaded_ruby_provider"] = 0, -- disable ruby provider
-  toggle_theme_icon = "   ",
-  bigfile_size = 1024 * 1024 * 1.5, -- 1.5 MB
-}
-
 vim.opt.shortmess:append "Ac" -- Disable asking
 vim.opt.whichwrap:append "<>[]hl"
 -- vim.opt.iskeyword:append "-"
@@ -86,10 +69,6 @@ end
 
 for name, value in pairs(options) do
   vim.opt[name] = value
-end
-
-for name, value in pairs(global) do
-  vim.g[name] = value
 end
 
 -- Inlay hint by default
