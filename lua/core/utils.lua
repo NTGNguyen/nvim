@@ -90,7 +90,7 @@ function RunCode()
       -- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
     },
     cs = {
-      default = "dotnet run",
+      default = "dotnet run --project $dir",
     },
     go = {
       default = "go run %",
