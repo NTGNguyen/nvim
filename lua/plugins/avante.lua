@@ -23,7 +23,7 @@ return {
       support_paste_from_clipboard = true,
     },
     hints = {
-      enabled = true,
+      enabled = false,
     },
     windows = {
       width = 50,
