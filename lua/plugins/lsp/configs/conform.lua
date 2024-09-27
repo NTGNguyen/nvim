@@ -82,5 +82,48 @@ return {
     format_after_save = {},
     formatters_by_ft = formatters_by_ft,
     formatters = formatters,
+    format_on_save = function(bufnr)
+      -- Disable with a global or buffer-local variable
+      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+        return
+      end
+      return { timeout_ms = 500, lsp_format = "fallback" }
+    end,
   },
+  init = function()
+    vim.api.nvim_create_user_command("FormatDisable", function(args)
+      if args.bang then
+        -- FormatDisable! will disable formatting just for this buffer
+        vim.b.disable_autoformat = true
+        vim.notify("Disable Autoformat (Local)", vim.log.levels.INFO, { title = "Conform" })
+      else
+        vim.g.disable_autoformat = true
+        vim.notify("Disable Autoformat", vim.log.levels.INFO, { title = "Conform" })
+      end
+    end, {
+      desc = "Conform | Disable Autoformat On Save",
+      bang = true,
+    })
+
+    vim.api.nvim_create_user_command("FormatEnable", function(args)
+      if args.bang then
+        vim.b.disable_autoformat = false
+        vim.notify("Enable Autoformat (Local)", vim.log.levels.INFO, { title = "Conform" })
+      else
+        vim.g.disable_autoformat = false
+        vim.notify("Enable Autoformat", vim.log.levels.INFO, { title = "Conform" })
+      end
+    end, {
+      desc = "Conform | Enable Autoformat On Save",
+      bang = true,
+    })
+
+    vim.keymap.set("n", "<leader>lF", function()
+      if vim.b.disable_autoformat then
+        vim.cmd "FormatEnable!"
+      else
+        vim.cmd "FormatDisable!"
+      end
+    end, { desc = "Conform | Toggle Autoformat", silent = true })
+  end,
 }
