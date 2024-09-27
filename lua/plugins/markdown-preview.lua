@@ -17,4 +17,7 @@ return {
     vim.fn["mkdp#util#install"]()
   end,
   ft = "markdown",
+  init = function()
+    vim.g.mkdp_open_to_the_world = 1 -- Open for other to access
+  end,
 }
