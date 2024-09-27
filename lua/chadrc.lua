@@ -16,7 +16,7 @@ local function get_venv(variable)
   return venv
 end
 
-local function get_header()
+local function get_header(default)
   if vim.g.random_header then
     local headerNames = {}
     for name, _ in pairs(headers) do
@@ -27,7 +27,8 @@ local function get_header()
     local randomHeader = headers[randomName]
     return randomHeader
   else
-    return headers["kevim"]
+    local name = (default == nil or default == "") and "nvchad" or default
+    return headers[name]
   end
 end
 
@@ -247,8 +248,8 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = true,
-    header = get_header(),
+    load_on_startup = false,
+    header = get_header "kevim",
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
       { "󰈚  Recent Files", "Spc f r", "Telescope oldfiles" },
