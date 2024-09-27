@@ -248,7 +248,7 @@ M.ui = {
   },
 
   nvdash = {
-    load_on_startup = false,
+    load_on_startup = true,
     header = get_header "kevim",
     buttons = {
       { "  Find File", "Spc f f", "Telescope find_files" },
