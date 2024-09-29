@@ -3,6 +3,9 @@ local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
 
+-- Enter Command Mode
+vim.keymap.set("n", "<leader>;", ":", { desc = "General | Enter Command Mode", silent = true })
+
 -- Remove All Text
 vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All Text", silent = true })
 
