@@ -1,6 +1,7 @@
 return {
   "rest-nvim/rest.nvim",
   name = "rest-nvim",
+  enabled = vim.fn.has "win32" == 0,
   dependencies = {
     "nvim-telescope/telescope.nvim",
     opts = {
