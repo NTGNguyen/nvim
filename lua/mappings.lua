@@ -2,6 +2,7 @@
 local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
+local utils = require("core.utils")
 
 -- Enter Command Mode
 vim.keymap.set("n", "<leader>;", ":", { desc = "General | Enter Command Mode", silent = true })
@@ -341,7 +342,7 @@ end, { desc = "Neovim | Version", silent = true })
 
 -- Run Code
 vim.keymap.set("n", "<leader>nr", function()
-  RunCode()
+  utils.run_code()
 end, { desc = "Neovim | Run Code", silent = true })
 
 vim.keymap.set("n", "<leader>np", function()

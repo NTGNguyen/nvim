@@ -18,15 +18,35 @@ return {
     })
   end,
   settings = {
-    eslint = {
-      format = {
-        enable = false,
+    codeAction = {
+      disableRuleComment = {
+        enable = true,
+        location = "separateLine",
       },
-      rules = {
-        customizations = {
-          -- Your Rules
-        },
+      showDocumentation = {
+        enable = true,
       },
+    },
+    codeActionOnSave = {
+      enable = false,
+      mode = "all",
+    },
+    experimental = {
+      useFlatConfig = true,
+    },
+    format = false,
+    nodePath = "",
+    onIgnoredFiles = "off",
+    problems = {
+      shortenToSingleLine = false,
+    },
+    quiet = false,
+    rulesCustomizations = {},
+    run = "onType",
+    useESLintClass = false,
+    validate = "on",
+    workingDirectory = {
+      mode = "location",
     },
   },
 }
