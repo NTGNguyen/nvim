@@ -21,7 +21,7 @@ local global = {
   mapleader = " ",
   maplocalleader = "\\",
   bigfile_size = 1024 * 1024 * 1.5, -- 1.5 MB
-  disable_autoformat = true,
+  disable_autoformat = false,
   os = os,
   path_delimiter = os == "Windows" and ";" or ":",
   path_separator = os == "Windows" and "\\" or "/",
