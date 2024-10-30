@@ -2,7 +2,7 @@
 local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
-local utils = require("core.utils")
+local utils = require "core.utils"
 
 -- Enter Command Mode
 vim.keymap.set("n", "<leader>;", ":", { desc = "General | Enter Command Mode", silent = true })
@@ -135,6 +135,9 @@ vim.keymap.set("n", "<leader>w", function()
     vim.notify("Can't Close Window", vim.log.levels.WARN, { title = "Close Window" })
   end
 end, { desc = "General | Close window", silent = true })
+
+-- Select All in Normal Mode
+vim.keymap.set("i", "<C-a>", "<Esc>ggVG", { desc = "General | Select All", silent = true })
 
 -- Add size at the top
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "General | Add size at the top", silent = true })
