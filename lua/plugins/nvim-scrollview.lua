@@ -2,7 +2,6 @@
 -- NOTE: A Neovim plugin that displays interactive vertical scrollbars and signs
 return {
   "dstein64/nvim-scrollview",
-  event = "BufReadPost",
   opts = {
     excluded_filetypes = {
       "NvimTree",
