@@ -258,8 +258,8 @@ vim.keymap.set("t", "<C-h>", "<C-\\<C-N><C-h>", { desc = "General | Go to left w
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-l>", { desc = "General | Go to right window(Terminal)", silent = true })
 
 -- Middle Search Result
-vim.keymap.set("n", "n", "nzz", { desc = "General | Middle Search Result", silent = true })
-vim.keymap.set("n", "N", "Nzz", { desc = "General | Middle Search Result", silent = true })
+-- vim.keymap.set("n", "n", "nzz", { desc = "General | Middle Search Result", silent = true })
+-- vim.keymap.set("n", "N", "Nzz", { desc = "General | Middle Search Result", silent = true })
 
 -- Word Search Increment
 vim.keymap.set("c", "<Tab>", function()
