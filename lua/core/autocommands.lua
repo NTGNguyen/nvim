@@ -46,19 +46,19 @@ autocmd("FileType", {
 })
 
 -- Remove this if there's an issue
-autocmd({ "BufReadPost", "BufNewFile" }, {
-  once = true,
-  callback = function()
-    -- In wsl 2, just install xclip
-    -- Ubuntu
-    -- sudo apt install xclip
-    -- Arch linux
-    -- sudo pacman -S xclip
-    vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-  end,
-  group = general,
-  desc = "Lazy load clipboard",
-})
+-- autocmd({ "BufReadPost", "BufNewFile" }, {
+--   once = true,
+--   callback = function()
+--     -- In wsl 2, just install xclip
+--     -- Ubuntu
+--     -- sudo apt install xclip
+--     -- Arch linux
+--     -- sudo pacman -S xclip
+--     vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+--   end,
+--   group = general,
+--   desc = "Lazy load clipboard",
+-- })
 
 autocmd("TermOpen", {
   callback = function()
