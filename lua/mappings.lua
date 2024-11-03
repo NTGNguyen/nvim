@@ -178,7 +178,12 @@ end, { desc = "General | Close Buffer", silent = true })
 
 -- Close Other Buffers
 vim.keymap.set("n", "<leader>C", function()
-  require("nvchad.tabufline").closeAllBufs()
+  require("nvchad.tabufline").closeAllBufs(true)
+end, { desc = "General | Close All Buffers", silent = true })
+
+-- Close Other Buffers
+vim.keymap.set("n", "<leader><C-c>", function()
+  require("nvchad.tabufline").closeAllBufs(false)
 end, { desc = "General | Close Other Buffers", silent = true })
 
 -- Close buffers from Left
@@ -190,6 +195,13 @@ end, { desc = "General | Close Buffers from Left", silent = true })
 vim.keymap.set("n", "scr", function()
   require("nvchad.tabufline").closeBufs_at_direction "right"
 end, { desc = "General | Close Buffers from Right", silent = true })
+
+-- Switch tab with Alt + Num
+for i = 1, 9, 1 do
+  vim.keymap.set("n", string.format("<A-%s>", i), function()
+    vim.api.nvim_set_current_buf(vim.t.bufs[i])
+  end)
+end
 
 -- Go to previous tab
 vim.keymap.set("n", "<Left>", "<cmd>tabprevious<CR>", { desc = "General | Go to previous tab", silent = true })

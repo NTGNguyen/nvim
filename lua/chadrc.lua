@@ -24,7 +24,11 @@ end
 M.ui = {
   telescope = { style = "borderless" }, -- borderless / bordered
   cmp = {
+    lspkind_text = true,
     style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    format_colors = {
+      tailwind = true,
+    },
   },
   statusline = {
     theme = "default", -- default/vscode/vscode_colored/minimal
@@ -45,13 +49,13 @@ M.ui = {
       "cursor",
       -- "total_lines",
     },
-    modules = require "core.statusline".modules,
+    modules = require("core.statusline").modules,
   },
 
   tabufline = {
     enabled = true,
     order = { "treeOffset", "buffers", "tabs", "btns" },
-    modules = require "core.tabufline".modules,
+    modules = require("core.tabufline").modules,
   },
 }
 
@@ -175,10 +179,11 @@ M.base46 = {
     "dap",
     "defaults",
     "devicons",
+    "diffview",
     "lsp",
+    "markview",
     "mason",
     "notify",
-    "nvdash",
     "nvimtree",
     "rainbowdelimiters",
     "statusline",
@@ -190,6 +195,13 @@ M.base46 = {
     -- "blankline", -- Disable because "lukas-reineke/indent-blankline.nvim" is disabled
     -- "lspsaga", -- Not to use this because it's suck on transparent
   },
+}
+
+M.colorify = {
+  enabled = false,
+  mode = "virtual", -- fg, bg, virtual
+  virt_text = "󱓻 ",
+  highlight = { hex = true, lspvars = true },
 }
 
 -- M.lazy_nvim = require "core.lazy" -- config for lazy.nvim startup options
