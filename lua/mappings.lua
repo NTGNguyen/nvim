@@ -13,9 +13,6 @@ vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All 
 -- Yank All Text
 vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Text", silent = true })
 
--- Yank Selected Text
-vim.keymap.set("v", "<leader>y", '"+y', { desc = "General | Yank Selected Text", silent = true })
-
 -- Quit
 vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
 
