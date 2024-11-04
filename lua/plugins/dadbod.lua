@@ -28,7 +28,7 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
       vim.g.vim_dadbod_completion_mark = ""
 
-      vim.keymap.set("n", "<leader>ub", function()
+      vim.keymap.set("n", "<leader><C-d>", function()
         if vim.g.nvdash_displayed then
           require("nvchad.tabufline").close_buffer()
         end

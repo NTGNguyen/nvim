@@ -32,6 +32,7 @@ return {
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
         { "<leader>d", group = "Debugging", icon = "" },
+        { "<leader><C-d>", group = "Debugging", icon = "" },
         { "<leader>f", group = "Find", icon = "" },
         { "<leader>g", group = "Git", icon = "󰊢" },
         { "<leader>l", group = "LSP", icon = "", mode = { "n", "v" } },
