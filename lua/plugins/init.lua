@@ -28,7 +28,11 @@ return {
       vim.keymap.set("n", "<leader>us", "<cmd>Shades<cr>", { desc = "Minty | Shades", silent = true })
     end,
   },
-  -- { "nvzone/menu", event = "BufReadPost" },
+  {
+    "nvzone/menu",
+    enabled = false,
+    event = "BufReadPost",
+  },
   {
     "nvzone/showkeys",
     cmd = "ShowkeysToggle",
