@@ -19,26 +19,21 @@ return {
       require("base46").load_all_highlights()
     end,
   },
-  { "nvchad/volt" },
+  { "nvzone/volt" },
   {
-    "nvchad/minty",
-    keys = {
-      {
-        "<leader>uh",
-        function()
-          require("minty.huefy").toggle()
-        end,
-        desc = "Minty | Toggle Huefy",
-        silent = true,
-      },
-      {
-        "<leader>us",
-        function()
-          require("minty.shades").toggle()
-        end,
-        desc = "Minty | Shades Huefy",
-        silent = true,
-      },
-    },
+    "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
+    init = function()
+      vim.keymap.set("n", "<leader>uh", "<cmd>Huefy<cr>", { desc = "Minty | Huefy", silent = true })
+      vim.keymap.set("n", "<leader>us", "<cmd>Shades<cr>", { desc = "Minty | Shades", silent = true })
+    end,
+  },
+  -- { "nvzone/menu", event = "BufReadPost" },
+  {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    init = function()
+      vim.keymap.set("n", "<leader>ok", "<cmd>ShowkeysToggle<cr>", { desc = "Showkeys | Toggle", silent = true })
+    end,
   },
 }
