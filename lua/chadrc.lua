@@ -192,7 +192,7 @@ M.base46 = {
     "treesitter",
     "trouble",
     "whichkey",
-    -- "blankline", -- Disable because "lukas-reineke/indent-blankline.nvim" is disabled
+    "blankline",
     -- "lspsaga", -- Not to use this because it's suck on transparent
   },
 }
