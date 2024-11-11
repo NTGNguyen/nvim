@@ -86,7 +86,7 @@ return {
       if bufname:match "/node_modules/" then
         return
       end
-      return { timeout_ms = 500, lsp_format = "fallback" }
+      return { timeout_ms = 2000, lsp_format = "fallback" }
     end,
     formatters_by_ft = formatters_by_ft,
     formatters = formatters,
@@ -95,7 +95,7 @@ return {
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
         return
       end
-      return { timeout_ms = 500, lsp_format = "fallback" }
+      return { timeout_ms = 2000, lsp_format = "fallback" }
     end,
   },
   init = function()
