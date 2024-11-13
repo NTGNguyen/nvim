@@ -5,6 +5,7 @@ vim.filetype.add {
     ["json"] = "jsonc",
     ["http"] = "http",
     ["regex"] = "regex",
+    ["xaml"] = "xml",
   },
   pattern = {
     [".*/hypr/.*%.conf"] = "hyprlang",
