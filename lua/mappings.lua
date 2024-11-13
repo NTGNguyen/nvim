@@ -178,7 +178,7 @@ end, { desc = "General | Close Buffer", silent = true })
 
 -- Close Other Buffers
 vim.keymap.set("n", "<leader>C", function()
-  require("nvchad.tabufline").closeAllBufs(true)
+  require("nvchad.tabufline").closeAllBufs(false)
 end, { desc = "General | Close All Buffers", silent = true })
 
 -- Close Other Buffers
