@@ -108,7 +108,7 @@ return {
           "--no-ignore",
           "--follow",
           "--exclude",
-          "**/{.git,node_modules,__pycache__,.venv,venv,.idea,.vs,*cache*,*debug*}/**",
+          "**/{.git,node_modules,__pycache__,.venv,venv,.idea,.vs,*cache*,*debug*,*bin*,*obj*}/**",
         },
       }
     end, { desc = "Telescope | All Files", silent = true })
