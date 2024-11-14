@@ -2,3 +2,5 @@ snippet vim-ft Vim Set Filetype for A File
 	vim:ft=${0:Filetype}
 snippet vim-set
   vim:set ${0:Option}=${1:Value}:
+snippet ignore-deepsource Ignore Deepsource Rules
+  skipcq: ${0:Rule, Rule,...}
