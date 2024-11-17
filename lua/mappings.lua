@@ -328,7 +328,7 @@ end, { desc = "Neovim | Goto Row & Col", silent = true })
 -- Toggle Cheatsheet
 vim.keymap.set("n", "<leader>nc", function()
   if vim.bo.filetype == "nvcheatsheet" then
-    vim.cmd "silent! close"
+    vim.cmd "Bdelete!"
   else
     vim.cmd "NvCheatsheet"
   end
