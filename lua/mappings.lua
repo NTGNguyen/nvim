@@ -326,13 +326,7 @@ vim.keymap.set("n", "<leader>nG", function()
 end, { desc = "Neovim | Goto Row & Col", silent = true })
 
 -- Toggle Cheatsheet
-vim.keymap.set("n", "<leader>nc", function()
-  if vim.bo.filetype == "nvcheatsheet" then
-    vim.cmd "Bdelete!"
-  else
-    vim.cmd "NvCheatsheet"
-  end
-end, { desc = "Neovim | Toggle Cheatsheet", silent = true })
+vim.keymap.set("n", "<leader>nc", "<cmd>NvCheatsheet<cr>", { desc = "Neovim | Toggle Cheatsheet", silent = true })
 
 -- Inspect
 vim.keymap.set("n", "<leader>ni", function()
