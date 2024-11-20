@@ -52,7 +52,7 @@ M.run_code = function()
       -- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
     },
     cs = {
-      default = "dotnet run --project $dir",
+      default = "dotnet run --no-restore --project $dir",
     },
     go = {
       default = "go run %",
