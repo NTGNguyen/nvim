@@ -15,12 +15,13 @@ local formatters_by_ft = {
   lua = { "stylua" },
   ["markdown.mdx"] = { "prettier", "doctoc" },
   markdown = { "prettier", "doctoc" },
-  mysql = { "sql_formatter_mysql" },
+  mysql = { "mysql_formatter" },
   python = { "ruff_fix", "ruff_format" },
   scss = { "prettier" },
   sh = { "shfmt" },
   sqloracle = { "sql_formatter" },
   sql = { "sql_formatter" },
+  tsql = { "tsql_formatter" },
   typescript = { "prettier" },
   typescriptreact = { "prettier" },
   vue = { "prettier" },
@@ -62,10 +63,16 @@ local formatters = {
       "--ignore=F401",
     },
   },
-  ["sql_formatter_mysql"] = {
+  ["mysql_formatter"] = {
     command = "sql-formatter",
     args = {
       "--language=mysql",
+    },
+  },
+  ["tsql_formatter"] = {
+    command = "sql-formatter",
+    args = {
+      "--language=tsql",
     },
   },
 }
