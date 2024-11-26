@@ -27,6 +27,12 @@ return {
       "<cmd>lua require 'gitsigns'.blame_line()<cr>",
       { desc = "Gitsigns | Blame Line", silent = true }
     )
+    vim.keymap.set(
+      "n",
+      "<leader>gt",
+      "<cmd>Gitsigns toggle_current_line_blame<cr>",
+      { desc = "Gitsigns | Toggle Blame", silent = true }
+    )
   end,
   event = "BufReadPost",
   opts = {
@@ -39,5 +45,8 @@ return {
       untracked = { text = "│" },
     },
     on_attach = function() end,
+    current_line_blame_opts = {
+      delay = 200,
+    },
   },
 }
