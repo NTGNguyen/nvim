@@ -1,5 +1,8 @@
 -- NOTE: NvChad Related Options
 ---@type ChadrcConfig
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+-- Please read that file to know all available options :(
 local M = {}
 
 local highlights = require "highlights"
@@ -170,8 +173,8 @@ M.lsp = { signature = false }
 
 M.base46 = {
   theme = "catppuccin",
-  theme_toggle = { "catppuccin", "one_light" },
   transparency = true,
+  theme_toggle = { "catppuccin", "one_light" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   integrations = {
