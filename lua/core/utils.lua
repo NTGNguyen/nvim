@@ -58,7 +58,7 @@ M.run_code = function()
       default = "go run %",
     },
     html = {
-      default = "brave %", -- NOTE: Change this based on your browser that you use
+      default = "brave $filePath", -- NOTE: Change this based on your browser that you use
     },
     java = {
       default = "java %",
