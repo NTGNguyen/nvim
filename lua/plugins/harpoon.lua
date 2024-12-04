@@ -2,7 +2,7 @@
 -- NOTE: Marks
 return {
   "ThePrimeagen/harpoon",
-  enabled = false, -- Disabled by Kev
+  enabled = true,
   init = function()
     vim.keymap.set("n", "<leader>ha", function()
       require("harpoon"):list():add()

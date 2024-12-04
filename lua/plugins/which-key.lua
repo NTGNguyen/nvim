@@ -27,14 +27,14 @@ return {
     require("which-key").add {
       {
         -- { "<leader>P", group = "Yanky", icon = "", mode = { "n", "x" } },
-        -- { "<leader>h", group = "Harpoon", icon = "" },
+        { "<leader><C-d>", group = "Debugging", icon = "" },
         { "<leader>A", group = "API", icon = "󱂛" },
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
         { "<leader>d", group = "Debugging", icon = "" },
-        { "<leader><C-d>", group = "Debugging", icon = "" },
         { "<leader>f", group = "Find", icon = "" },
         { "<leader>g", group = "Git", icon = "󰊢" },
+        { "<leader>h", group = "Harpoon", icon = "" },
         { "<leader>l", group = "LSP", icon = "", mode = { "n", "v" } },
         { "<leader>m", group = "Markdown", icon = "" },
         { "<leader>n", group = "Neovim", icon = "" },
