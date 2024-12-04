@@ -2,6 +2,7 @@
 -- NOTE: Note Taking
 return {
   "nvim-neorg/neorg",
+  enabled = false,
   dependencies = { "luarocks.nvim" },
   ft = "norg",
   opts = {
