@@ -214,7 +214,8 @@ return {
     {
       "L3MON4D3/LuaSnip",
       dependencies = "rafamadriz/friendly-snippets",
-      build = "make install_jsregexp",
+      build = vim.g.os == "Windows" and "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c"
+        or "make install_jsregexp",
     },
     -- Yanky integration
     -- {
