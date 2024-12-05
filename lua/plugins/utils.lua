@@ -16,6 +16,8 @@ return {
   {
     "vhyrro/luarocks.nvim",
     priority = 1000,
+    enabled = false,
+    event = "VeryLazy",
     opts = {
       rocks = {
         "jsregexp",
