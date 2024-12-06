@@ -71,7 +71,6 @@ return {
         ".*LICENSE.*",
         ".*__pycache__$",
         ".*package-lock.json",
-        ".*package.json",
         ".*yarn.lock",
         ".DS_Store",
         "^\\.?.v?env$",
