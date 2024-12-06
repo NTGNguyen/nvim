@@ -1,18 +1,24 @@
 ---@type NvPluginSpec
--- NOTE: AI chat
+-- NOTE: Use your Neovim like using Cursor AI IDE!
+-- AI chat
 return {
   "yetone/avante.nvim",
   enabled = true,
-  build = vim.fn.has "win32" == 0 and "make" or "pwsh -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false", -- This is Optional, only if you want to use tiktoken_core to calculate tokens count, but may be required on Windows
   cmd = {
-    "AvanteAsk",
+    "AvanteChat",
+    "AvanteToggle",
     "AvanteRefresh",
     "AvanteEdit",
   },
   init = function()
-    vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>AvanteAsk<cr>", { desc = "AI | Chat", silent = true })
-    vim.keymap.set("v", "<leader>ar", "<cmd>AvanteRefresh<cr>", { desc = "AI | Refresh", silent = true })
-    vim.keymap.set({ "n", "v" }, "<leader>ae", "<cmd>AvanteEdit<cr>", { desc = "AI | Edit", silent = true })
+    vim.keymap.set(
+      { "n", "v" },
+      "<leader>ac",
+      "<cmd>AvanteToggle<cr>",
+      { desc = "Avante | Toggle Chat", silent = true }
+    )
+    vim.keymap.set("v", "<leader>ar", "<cmd>AvanteRefresh<cr>", { desc = "Avante | Refresh", silent = true })
+    vim.keymap.set({ "n", "v" }, "<leader>ae", "<cmd>AvanteEdit<cr>", { desc = "Avante | Edit", silent = true })
   end,
   opts = {
     provider = "copilot",
@@ -20,13 +26,16 @@ return {
       auto_set_highlight_group = true,
       auto_set_keymaps = false,
       auto_apply_diff_after_generation = false,
-      support_paste_from_clipboard = true,
+      support_paste_from_clipboard = false,
     },
     hints = {
-      enabled = false,
+      enabled = true,
     },
     windows = {
       width = 50,
+      sidebar_header = {
+        enabled = false,
+      },
     },
   },
   dependencies = {
@@ -35,5 +44,6 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "OXY2DEV/markview.nvim",
+    "zbirenbaum/copilot.lua", -- for providers='copilot'
   },
 }
