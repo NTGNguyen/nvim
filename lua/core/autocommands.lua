@@ -110,8 +110,10 @@ autocmd("TextYankPost", {
 --   desc = "Disable Tabline",
 -- })
 
-autocmd("BufEnter", {
+autocmd("FileType", {
+  pattern = "*",
   callback = function()
+    -- Disable comment on new line
     vim.opt.formatoptions:remove { "c", "r", "o" }
   end,
   group = general,
