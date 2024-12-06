@@ -12,17 +12,4 @@ return {
     "moll/vim-bbye",
     cmd = { "Bdelete", "Bwipeout" },
   },
-  -- Add Luarocks support for lazy.nvim
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1000,
-    enabled = false,
-    event = "VeryLazy",
-    opts = {
-      rocks = {
-        "jsregexp",
-      },
-    },
-    config = true,
-  },
 }
