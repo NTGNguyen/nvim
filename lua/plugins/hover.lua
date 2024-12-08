@@ -2,6 +2,7 @@
 -- NOTE: Hover plugin framework for Neovim
 return {
   "lewis6991/hover.nvim",
+  enabled = false,
   event = "BufReadPost",
   init = function()
     -- Setup keymaps
