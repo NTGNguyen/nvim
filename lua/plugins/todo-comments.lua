@@ -13,4 +13,5 @@ return {
       require("todo-comments").jump_prev()
     end, { desc = "Todo | Previous Todo" })
   end,
+  config = true,
 }
