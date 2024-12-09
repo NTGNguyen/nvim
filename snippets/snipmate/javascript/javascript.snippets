@@ -364,9 +364,11 @@ snippet aw "await"
 
 snippet ignore-ts Ignore All Typescript Check
   // @ts-ignore
-snippet ignore-eslint Ignore Specific ESLint rule(s) Next Line
+snippet ignore-eslint Ignore Specific ESLint rule(s)
+  // eslint-disable-line $0
+snippet ignore-eslint-next-line Ignore Specific ESLint rule(s) Next Line
   // eslint-disable-next-line $0
-snippet disable-range-format Disable Range Format
+snippet ignore-prettier-range Ignore Prettier in range
   // prettier-ignore-start
   $0
   // prettier-ignore-end
