@@ -19,9 +19,9 @@ return {
       require("base46").load_all_highlights()
     end,
   },
-  { "nvzone/volt" },
   {
     "nvzone/minty",
+    dependencies = { "nvzone/volt" },
     cmd = { "Shades", "Huefy" },
     init = function()
       vim.keymap.set("n", "<leader>uh", "<cmd>Huefy<cr>", { desc = "Minty | Huefy", silent = true })
@@ -30,11 +30,13 @@ return {
   },
   {
     "nvzone/menu",
+    dependencies = { "nvzone/volt" },
     enabled = false,
     event = "BufReadPost",
   },
   {
     "nvzone/showkeys",
+    dependencies = { "nvzone/volt" },
     cmd = "ShowkeysToggle",
     init = function()
       vim.keymap.set("n", "<leader>ok", "<cmd>ShowkeysToggle<cr>", { desc = "Showkeys | Toggle", silent = true })
