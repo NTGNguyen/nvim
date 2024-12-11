@@ -30,9 +30,10 @@ return {
       gitcommit = { "commitlint" },
     }
 
-    vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+    vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {
       callback = function()
         require("lint").try_lint()
+        require("lint").try_lint "codespell"
       end,
     })
   end,

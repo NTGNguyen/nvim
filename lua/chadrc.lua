@@ -166,6 +166,7 @@ M.mason = {
 
     -- Others
     -- vim.fn.executable "hyprland" and "hyprls" or nil,
+    "codespell",
   },
 }
 
