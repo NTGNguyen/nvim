@@ -5,8 +5,8 @@ return {
   "pmizio/typescript-tools.nvim",
   event = "BufReadPost",
   init = function()
-    -- NOTE: Just let prettier plugin do it
-
+    -- NOTE: Rather let Prettier or Eslint do this
+    --
     -- vim.api.nvim_create_autocmd("BufWritePre", {
     --   pattern = {
     --     "*.js",
@@ -18,10 +18,6 @@ return {
     -- })
   end,
   opts = {
-    on_attach = function(client)
-      client.server_capabilities.documentFormattingProvider = false
-      client.server_capabilities.documentRangeFormattingProvider = false
-    end,
     settings = {
       expose_as_code_action = {
         "fix_all",
