@@ -59,7 +59,7 @@ M.ui = {
 
   tabufline = {
     enabled = true,
-    lazyload = false,
+    lazyload = true,
     order = { "treeOffset", "buffers", "tabs", "btns" },
     modules = require("core.tabufline").modules,
   },
