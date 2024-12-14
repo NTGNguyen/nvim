@@ -25,8 +25,8 @@ M.override = {
   gitcommitComment = { link = "Comment", fg = "grey_fg2" },
 
   -- User style
-  NvDashAscii = { bg = "blue", fg = "black" },
-  NvDashButtons = { bg = "black2", fg = "white" },
+  -- NvDashAscii = { bg = "blue", fg = "black" },
+  -- NvDashButtons = { bg = "black2", fg = "white" },
 
   -- WARN: Only suitable while using catppuccin with transparent. Consider to remove if use another theme.
   Visual = { bg = "one_bg2" },

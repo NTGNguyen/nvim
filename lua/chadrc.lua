@@ -58,6 +58,7 @@ M.ui = {
 
   tabufline = {
     enabled = true,
+    lazyload = false,
     order = { "treeOffset", "buffers", "tabs", "btns" },
     modules = require("core.tabufline").modules,
   },
@@ -65,14 +66,19 @@ M.ui = {
 
 M.nvdash = {
   load_on_startup = true,
-  header = get_header "kevim",
+  header = get_header "kevim_ansii_shadow",
   buttons = {
-    { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
-    { txt = "󰈚  Recent Files", keys = "Spc f r", cmd = "Telescope oldfiles" },
-    { txt = "󰈭  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
-    { txt = "  Find Projects", keys = "Spc f p", cmd = "Telescope projects" },
-    { txt = "  Themes", keys = "Spc f t", cmd = "Telescope themes" },
-    { txt = "  Mappings", keys = "Spc n c", cmd = "NvCheatsheet" },
+    { txt = "  Find File", cmd = "Telescope find_files" },
+    { txt = "─", no_gap = true, rep = true },
+    {
+      txt = function()
+        local stats = require("lazy").stats()
+        local ms = math.floor(stats.startuptime) .. " ms"
+        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+      end,
+      no_gap = true,
+    },
+    { txt = "─", no_gap = true, rep = true },
   },
 }
 
