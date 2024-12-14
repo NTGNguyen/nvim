@@ -186,6 +186,10 @@ M.modules = {
     local ok, m = pcall(require, "better_escape")
     return ok and m.waiting and "✺" or ""
   end,
+
+  macro_recording = function()
+    return vim.fn.reg_recording() ~= "" and "" or ""
+  end,
 }
 
 return M

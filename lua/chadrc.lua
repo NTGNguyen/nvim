@@ -44,6 +44,7 @@ M.ui = {
       "git",
       "%=",
       -- "escape_status",
+      "macro_recording",
       "lsp_msg",
       "python_venv",
       "diagnostics",
