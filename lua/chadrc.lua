@@ -43,6 +43,7 @@ M.ui = {
       "file",
       "git",
       "%=",
+      -- "escape_status",
       "lsp_msg",
       "python_venv",
       "diagnostics",

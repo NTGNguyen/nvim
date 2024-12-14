@@ -181,6 +181,11 @@ M.modules = {
       return (vim.o.columns > 100 and (" %#St_gitIcons#" .. table.concat(clients, ", ") .. " ")) or "  LSP "
     end
   end,
+
+  escape_status = function()
+    local ok, m = pcall(require, "better_escape")
+    return ok and m.waiting and "✺" or ""
+  end,
 }
 
 return M
