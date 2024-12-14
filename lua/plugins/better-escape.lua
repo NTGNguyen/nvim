@@ -2,7 +2,8 @@
 -- NOTE: Map keys without delay when typing
 return {
   "max397574/better-escape.nvim",
-  enabled = false,
+  event = "BufReadPost",
+  enabled = true,
   opts = {
     default_mappings = false,
     mappings = {

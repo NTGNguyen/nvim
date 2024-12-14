@@ -389,7 +389,7 @@ vim.keymap.set("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Prof
 vim.keymap.set("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
 -- Escape
-vim.keymap.set("i", "jk", "<Esc>", { desc = "General | Enter Normal Mode", silent = true })
+-- vim.keymap.set("i", "jk", "<Esc>", { desc = "General | Enter Normal Mode", silent = true })
 
 -- Split Window
 vim.keymap.set("n", "ss", "<cmd>split<cr>", { desc = "General | Split Horizontal", silent = true })
