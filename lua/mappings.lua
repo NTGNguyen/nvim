@@ -70,6 +70,11 @@ vim.keymap.set("n", "<leader>oS", function()
   end
 end, { desc = "Options | Toggle Spell Check", silent = true })
 
+-- Open find theme
+-- vim.keymap.set("n", "<leader>ft", function()
+--   require("nvchad.themes").open()
+-- end, { desc = "NvChad | Open Theme", silent = true })
+
 -- Toggle Theme
 vim.keymap.set("n", "<leader>ot", function()
   local opts = require("nvconfig").base46
