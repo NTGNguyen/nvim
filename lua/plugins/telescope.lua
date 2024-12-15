@@ -47,12 +47,7 @@ return {
 
     vim.keymap.set("n", "<leader>fC", "<cmd>Telescope commands<cr>", { desc = "Telescope | Commands", silent = true })
 
-    vim.keymap.set(
-      "n",
-      "<leader>fS",
-      "<cmd>Telescope spell_suggest<cr>",
-      { desc = "Telescope | Spell Suggest", silent = true }
-    )
+    -- vim.keymap.set("n", "<leader>fS", "<cmd>Telescope spell_suggest<cr>", { desc = "Telescope | Spell Suggest", silent = true })
 
     vim.keymap.set(
       "n",
@@ -112,6 +107,17 @@ return {
         },
       }
     end, { desc = "Telescope | All Files", silent = true })
+
+    local open_spell_sugestion = function()
+      local col = vim.fn.col "."
+      local line = vim.fn.getline "."
+      if col <= #line and line:sub(col, col):match "%a" then
+        vim.cmd "Telescope spell_suggest"
+      end
+    end
+
+    vim.keymap.set("n", "<C-Space>", open_spell_sugestion, { desc = "Telescope | Spell Suggest", silent = true })
+    vim.keymap.set("n", "<A-;>", open_spell_sugestion, { desc = "Telescope | Spell Suggest", silent = true })
   end,
   dependencies = {
     {
