@@ -18,6 +18,11 @@ return {
     -- })
   end,
   opts = {
+    on_attach = function(client, bufnr)
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+      require("plugins.lsp.opts").on_attach(client, bufnr)
+    end,
     settings = {
       expose_as_code_action = {
         "fix_all",
