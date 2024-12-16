@@ -1,6 +1,5 @@
 local fts = {
   "Avante",
-  "help",
   "markdown",
   "norg",
   "org",
