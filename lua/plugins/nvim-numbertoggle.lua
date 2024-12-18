@@ -2,5 +2,5 @@
 -- NOTE: Relative number auto toggle when focus
 return {
   "sitiom/nvim-numbertoggle",
-  event = "BufReadPost",
+  event = "User FilePost",
 }

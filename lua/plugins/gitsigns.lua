@@ -34,7 +34,7 @@ return {
       { desc = "Gitsigns | Toggle Blame", silent = true }
     )
   end,
-  event = "BufReadPost",
+  event = "User FilePost",
   opts = {
     signs = {
       add = { text = "│" },

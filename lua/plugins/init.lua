@@ -32,7 +32,7 @@ return {
     "nvzone/menu",
     dependencies = { "nvzone/volt" },
     enabled = false,
-    event = "BufReadPost",
+    event = "VeryLazy",
   },
   {
     "nvzone/showkeys",

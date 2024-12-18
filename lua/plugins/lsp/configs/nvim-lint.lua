@@ -2,7 +2,7 @@
 -- NOTE: Linting
 return {
   "mfussenegger/nvim-lint",
-  event = "BufReadPost",
+  event = "User FilePost",
   enabled = true,
   config = function()
     local linters = require("lint").linters

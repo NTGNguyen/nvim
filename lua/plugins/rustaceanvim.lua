@@ -4,7 +4,7 @@ return {
   "mrcjkb/rustaceanvim",
   enabled = false, -- Disabled by Kev
   version = "^4", -- Recommended
-  event = "BufReadPost",
+  event = "User FilePost",
   config = function()
     local extension_path = vim.fn.stdpath "data" .. "/mason/packages/codelldb/extension/"
     local codelldb_path = extension_path .. "adapter/codelldb"

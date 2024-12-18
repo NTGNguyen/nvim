@@ -3,7 +3,7 @@
 return {
   "lewis6991/hover.nvim",
   enabled = false,
-  event = "BufReadPost",
+  event = "VeryLazy",
   init = function()
     -- Setup keymaps
     vim.keymap.set("n", "K", require("hover").hover, { desc = "Hover | Hover" })

@@ -3,7 +3,7 @@
 return {
   "lewis6991/satellite.nvim",
   enabled = false,
-  event = "BufReadPost",
+  event = "User FilePost",
   keys = {
     {
       "<leader>o<C-s>",

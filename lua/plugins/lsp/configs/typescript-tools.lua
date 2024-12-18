@@ -3,7 +3,7 @@
 -- For further information: https://github.com/typescript-language-server/typescript-language-server/blob/HEAD/docs/configuration.md
 return {
   "pmizio/typescript-tools.nvim",
-  event = "BufReadPost",
+  event = "User FilePost",
   init = function()
     -- NOTE: Rather let Prettier or Eslint do this
     --
