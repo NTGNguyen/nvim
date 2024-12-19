@@ -74,8 +74,8 @@ M.nvdash = {
     {
       txt = function()
         local stats = require("lazy").stats()
-        local ms = math.floor(stats.startuptime) .. " ms"
-        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+        local milliseconds = math.floor(stats.startuptime) .. " ms"
+        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. milliseconds
       end,
       no_gap = true,
     },
