@@ -15,6 +15,5 @@ return {
     { "<leader>Ar", "<cmd>Rest run<cr>", desc = "Rest | Run", ft = "http", silent = true },
     { "<leader>AR", "<cmd>Rest result<cr>", desc = "Rest | Result", ft = "http", silent = true },
   },
-  opts = {},
   config = true,
 }
