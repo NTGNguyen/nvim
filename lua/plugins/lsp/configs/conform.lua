@@ -25,7 +25,7 @@ local formatters_by_ft = {
   typescript = { "prettier" },
   typescriptreact = { "prettier" },
   vue = { "prettier" },
-  -- yaml = { "yamlfmt" }, -- yaml-language-server handle formatting
+  yaml = { "prettier" },
   zsh = { "beautysh" },
 }
 
