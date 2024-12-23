@@ -70,6 +70,7 @@ return {
         ".DS_Store",
         "^\\.git$",
         "thumbs.db",
+        ".*.egg-info", -- python's stuff
         -- "*.SECURITY.*",
         -- ".*.exe$",
         -- ".*.idea",
