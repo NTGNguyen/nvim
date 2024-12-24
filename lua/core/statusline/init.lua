@@ -132,7 +132,8 @@ M.modules = {
     if venv == " " then
       return " "
     else
-      return "  " .. venv
+      -- return "  " .. venv
+      return " "
     end
   end,
 
