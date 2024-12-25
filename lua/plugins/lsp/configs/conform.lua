@@ -60,7 +60,7 @@ local formatters = {
   ["ruff_fix"] = {
     append_args = {
       "--select=I",
-      "--ignore=F401",
+      -- "--ignore=F401", -- Unused import
     },
   },
   ["mysql_formatter"] = {
