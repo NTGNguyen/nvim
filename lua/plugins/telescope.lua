@@ -28,6 +28,11 @@ return {
       { desc = "Telescope | Word Under Cursor", silent = true }
     )
 
+    vim.keymap.set("v", "<leader>fs", function()
+      local text = require("core.utils").get_visual_selection()
+      require("telescope.builtin").current_buffer_fuzzy_find { default_text = text }
+    end, { desc = "Telescope | Word Under Cursor", silent = true })
+
     vim.keymap.set("n", "<leader>ft", "<cmd>Telescope themes<cr>", { desc = "Telescope | Themes", silent = true })
 
     vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope | Buffers", silent = true })
