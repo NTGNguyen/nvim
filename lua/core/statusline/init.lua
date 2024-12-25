@@ -191,6 +191,13 @@ M.modules = {
   macro_recording = function()
     return vim.fn.reg_recording() ~= "" and "" or ""
   end,
+
+  auto_format = function()
+    if vim.b.disable_autoformat == false or (vim.b.disable_autoformat == nil and vim.g.disable_autoformat == false) then
+      return " "
+    end
+    return ""
+  end,
 }
 
 return M
