@@ -228,21 +228,21 @@ autocmd("FileType", {
   desc = "Disable Wrap in these filetypes",
 })
 
-autocmd("FileType", {
-  pattern = {
-    -- "markdown",
-  },
-  callback = function()
-    vim.b.minianimate_disable = true
-    vim.b.cinnamon_disable = true
-    local neoscroll_ok, _ = pcall(require, "neoscroll")
-    if neoscroll_ok then
-      vim.cmd "NeoscrollEnableBufferPM"
-    end
-  end,
-  group = general,
-  desc = "Disable animation in these filetype",
-})
+-- autocmd("FileType", {
+--   pattern = {
+--     "markdown",
+--   },
+--   callback = function()
+--     vim.b.minianimate_disable = true
+--     vim.b.cinnamon_disable = true
+--     local neoscroll_ok, _ = pcall(require, "neoscroll")
+--     if neoscroll_ok then
+--       vim.cmd "NeoscrollEnableBufferPM"
+--     end
+--   end,
+--   group = general,
+--   desc = "Disable animation in these filetype",
+-- })
 
 -- autocmd("FileType", {
 --   desc = "Set tab width to 2 for specific filetypes",
