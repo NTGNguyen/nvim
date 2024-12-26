@@ -185,11 +185,11 @@ M.modules = {
 
   escape_status = function()
     local ok, m = pcall(require, "better_escape")
-    return ok and m.waiting and "✺" or ""
+    return ok and m.waiting and "✺ " or ""
   end,
 
   macro_recording = function()
-    return vim.fn.reg_recording() ~= "" and "" or ""
+    return vim.fn.reg_recording() ~= "" and " " or ""
   end,
 
   auto_format = function()
