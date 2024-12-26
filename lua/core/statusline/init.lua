@@ -133,7 +133,7 @@ M.modules = {
       return " "
     else
       -- return "  " .. venv
-      return " "
+      return "%#St_gitIcons# "
     end
   end,
 
@@ -185,18 +185,23 @@ M.modules = {
 
   escape_status = function()
     local ok, m = pcall(require, "better_escape")
-    return ok and m.waiting and "✺ " or ""
+    return ok and m.waiting and "%#St_gitIcons#✺ " or ""
   end,
 
   macro_recording = function()
-    return vim.fn.reg_recording() ~= "" and " " or ""
+    return vim.fn.reg_recording() ~= "" and "%#St_gitIcons# " or ""
   end,
 
   auto_format = function()
     if vim.b.disable_autoformat == false or (vim.b.disable_autoformat == nil and vim.g.disable_autoformat == false) then
-      return " "
+      return "%#St_gitIcons# "
     end
     return ""
+  end,
+
+  eol_char = function()
+    local eol = vim.bo.fileformat == "unix" and "lf" or vim.bo.fileformat == "dos" and "crlf" or "cr"
+    return "| %#St_gitIcons#" .. eol .. " "
   end,
 }
 
