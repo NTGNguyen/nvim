@@ -218,25 +218,27 @@ autocmd("ModeChanged", {
 
 autocmd("FileType", {
   pattern = {
-    "gitcommit",
-    "text",
     "log",
+    "markdown",
   },
   callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
+    vim.opt_local.wrap = false
   end,
   group = general,
-  desc = "Enable Wrap in these filetypes",
+  desc = "Disable Wrap in these filetypes",
 })
 
 autocmd("FileType", {
   pattern = {
-    "markdown",
+    -- "markdown",
   },
   callback = function()
     vim.b.minianimate_disable = true
     vim.b.cinnamon_disable = true
+    local neoscroll_ok, _ = pcall(require, "neoscroll")
+    if neoscroll_ok then
+      vim.cmd "NeoscrollEnableBufferPM"
+    end
   end,
   group = general,
   desc = "Disable animation in these filetype",
@@ -335,8 +337,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.cinnamon_disable = true
     vim.b.navic_lazy_update_context = true
     vim.b.matchup_matchparen_enabled = 0
-    local status_ok, _ = pcall(require, "neoscroll")
-    if status_ok then
+    local neoscroll_ok, _ = pcall(require, "neoscroll")
+    if neoscroll_ok then
       vim.cmd "NeoscrollEnableBufferPM"
     end
     vim.schedule(function()
