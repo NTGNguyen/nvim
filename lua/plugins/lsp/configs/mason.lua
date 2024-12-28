@@ -62,7 +62,7 @@ return {
 
           local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
           if require_ok then
-            opts = vim.tbl_deep_extend("force", server, opts)
+            opts = vim.tbl_deep_extend("keep", server, opts)
           end
 
           require("lspconfig")[server_name].setup(opts)

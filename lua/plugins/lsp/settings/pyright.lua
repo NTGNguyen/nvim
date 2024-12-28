@@ -2,10 +2,15 @@ return {
   settings = {
     python = {
       analysis = {
+        -- If use ruff, uncomment
+        -- ignore = { "*" },
         typeCheckingMode = "standard",
         diagnosticMode = "workspace",
-        disableOrganizeImports = true,
       },
+    },
+    pyright = {
+      -- If use Ruff's import organizer, uncomment
+      disableOrganizeImports = true,
     },
   },
 }
