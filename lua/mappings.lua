@@ -184,12 +184,13 @@ end, { desc = "General | Close Buffer", silent = true })
 -- Close Other Buffers
 vim.keymap.set("n", "<leader>C", function()
   require("nvchad.tabufline").closeAllBufs(false)
-end, { desc = "General | Close All Buffers", silent = true })
+end, { desc = "General | Close Other Buffers", silent = true })
 
 -- Close Other Buffers
-vim.keymap.set("n", "<leader><C-c>", function()
-  require("nvchad.tabufline").closeAllBufs(false)
-end, { desc = "General | Close Other Buffers", silent = true })
+-- NOTE: Not work because <C-c> is interrupt :(
+-- vim.keymap.set("n", "<leader><C-c>", function()
+--   require("nvchad.tabufline").closeAllBufs(true)
+-- end, { desc = "General | Close All Buffers", silent = true })
 
 -- Close buffers from Left
 vim.keymap.set("n", "scl", function()
