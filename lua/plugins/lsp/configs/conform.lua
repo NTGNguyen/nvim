@@ -16,7 +16,11 @@ local formatters_by_ft = {
   ["markdown.mdx"] = { "prettier", "doctoc" },
   markdown = { "prettier", "doctoc" },
   mysql = { "mysql_formatter" },
-  python = { "ruff_fix", "ruff_format" },
+  python = {
+    "ruff_fix",
+    "ruff_format",
+    -- "ruff_organize_imports", -- Should be set in config, so that ruff_fix can do that
+  },
   scss = { "prettier" },
   sh = { "shfmt" },
   sqloracle = { "sql_formatter" },

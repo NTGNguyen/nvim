@@ -140,10 +140,11 @@ M.mason = {
     "actionlint",
 
     -- Python
+    "basedpyright",
     "debugpy",
-    "pyright",
     "ruff",
     -- "basedpyright",
+    -- "pyright",
 
     -- C#
     -- "csharpier",

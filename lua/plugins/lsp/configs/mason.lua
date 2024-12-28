@@ -41,7 +41,6 @@ return {
 
       local disabled_servers = {
         "jdtls",
-        "ruff",
         "rust_analyzer",
         "ts_ls",
       }

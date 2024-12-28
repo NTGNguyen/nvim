@@ -23,7 +23,7 @@ return {
       javascript = { "eslint" },
       javascriptreact = { "eslint" },
       latex = { "vale" },
-      python = { "ruff" },
+      -- python = { "ruff" }, -- Already used ruff-lsp
       sh = { "shellcheck" },
       typescript = { "eslint" },
       typescriptreact = { "eslint" },

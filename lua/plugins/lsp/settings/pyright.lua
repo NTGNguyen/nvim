@@ -2,7 +2,8 @@ return {
   settings = {
     python = {
       analysis = {
-        -- If use ruff, uncomment
+        -- If use ruff, uncomment, but
+        -- TODO:  check the config again
         -- ignore = { "*" },
         typeCheckingMode = "standard",
         diagnosticMode = "workspace",
