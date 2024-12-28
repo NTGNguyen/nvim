@@ -194,7 +194,7 @@ M.modules = {
 
   auto_format = function()
     if vim.b.disable_autoformat == false or (vim.b.disable_autoformat == nil and vim.g.disable_autoformat == false) then
-      return "%#St_gitIcons# "
+      return "%#St_Lsp#󰁨 "
     end
     return ""
   end,
@@ -202,6 +202,63 @@ M.modules = {
   eol_char = function()
     local eol = vim.bo.fileformat == "unix" and "lf" or vim.bo.fileformat == "dos" and "crlf" or "cr"
     return "| %#St_gitIcons#" .. eol .. " "
+  end,
+
+  lsps = function()
+    local clients = {}
+    local buf = vim.api.nvim_get_current_buf()
+
+    -- Iterate through all the clients for the current buffer
+    for _, client in pairs(vim.lsp.get_clients { bufnr = buf }) do
+      -- Add the client name to the `clients` table
+      table.insert(clients, client.name)
+    end
+
+    if #clients == 0 then
+      return ""
+    else
+      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " "))
+    end
+  end,
+
+  linters = function()
+    local clients = {}
+
+    local lint_ok, lint = pcall(require, "lint")
+    if lint_ok then
+      local linters = {}
+      local fts = vim.split(vim.bo.filetype, ".", { plain = true, trimempty = true })
+      for _, ft in pairs(fts) do
+        vim.list_extend(linters, lint.linters_by_ft[ft] or {})
+      end
+      if #linters ~= 0 then
+        table.insert(clients, table.concat(linters, ", "))
+      end
+    end
+
+    if #clients == 0 then
+      return ""
+    else
+      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " "))
+    end
+  end,
+
+  formatters = function()
+    local clients = {}
+
+    local conform_ok, conform = pcall(require, "conform")
+    if conform_ok then
+      local formatters = conform.list_formatters(0)
+      for _, formatter in pairs(formatters) do
+        table.insert(clients, formatter.name)
+      end
+    end
+
+    if #clients == 0 then
+      return ""
+    else
+      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " "))
+    end
   end,
 }
 
