@@ -1,4 +1,3 @@
----@type NvPluginSpec
 local function on_attach(bufnr)
   local api = require "nvim-tree.api"
   local preview = require "nvim-tree-preview"
@@ -26,6 +25,7 @@ local function on_attach(bufnr)
   end, opts "Preview")
 end
 
+---@type NvPluginSpec
 -- NOTE: File Explorer
 return {
   "nvim-tree/nvim-tree.lua",
@@ -46,7 +46,7 @@ return {
   opts = {
     on_attach = on_attach,
     diagnostics = {
-      enable = false,
+      enable = true,
       icons = {
         hint = "󰌵",
         info = "",
@@ -119,7 +119,7 @@ return {
     },
 
     renderer = {
-      highlight_git = false,
+      highlight_git = true,
       -- root_folder_label = false,
       root_folder_label = ":~:s?$?",
       icons = {
