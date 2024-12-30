@@ -55,4 +55,7 @@ return {
       },
     },
   },
+  rock = {
+    hererocks = true,
+  },
 }
