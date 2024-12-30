@@ -53,7 +53,7 @@ local options = {
   -- shellxquote = "",
 }
 
-vim.opt.shortmess:append "Ac" -- Disable asking
+vim.opt.shortmess:append "AcqFW" -- Disable asking
 vim.opt.whichwrap:append "<>[]hl"
 -- vim.opt.iskeyword:append "-"
 
