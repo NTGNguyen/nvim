@@ -7,6 +7,8 @@ return {
     ft = "lua", -- only load on lua files
     opts = {
       library = {
+        "lazy.nvim",
+        "ui",
         -- Library items can be absolute paths
         -- "~/projects/my-awesome-lib",
         -- Or relative, which means they will be resolved as a plugin
