@@ -1,3 +1,6 @@
+-- Go to this to grab color
+-- base46/lua/base46/integrations/statusline/default.lua
+
 local M = {}
 
 local function get_venv(variable)
@@ -189,7 +192,7 @@ M.modules = {
   end,
 
   macro_recording = function()
-    return vim.fn.reg_recording() ~= "" and "%#St_gitIcons# " or ""
+    return vim.fn.reg_recording() ~= "" and "%#St_cwd_sep# " or ""
   end,
 
   auto_format = function()

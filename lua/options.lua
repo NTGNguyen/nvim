@@ -51,9 +51,10 @@ local options = {
   -- shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
   -- shellquote = "",
   -- shellxquote = "",
+  shortmess = "AcqFWI",
 }
 
-vim.opt.shortmess:append "AcqFW" -- Disable asking
+-- vim.opt.shortmess:append "Ac" -- Disable asking
 vim.opt.whichwrap:append "<>[]hl"
 -- vim.opt.iskeyword:append "-"
 
@@ -78,5 +79,6 @@ end
 
 -- add binaries installed by mason.nvim to path
 vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, vim.g.path_separator)
+  .. table.concat({ vim.fn.stdpath "data", "lazy-rocks", "hererocks", "bin" }, vim.g.path_separator)
   .. vim.g.path_delimiter
   .. vim.env.PATH
