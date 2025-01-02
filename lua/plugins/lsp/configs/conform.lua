@@ -85,7 +85,7 @@ local formatters = {
 return {
   -- NOTE: Formatting
   "stevearc/conform.nvim",
-  event = "User FilePost",
+  event = "VeryLazy",
   opts = {
     format_after_save = function(bufnr) -- Async format
       -- Disable with a global or buffer-local variable

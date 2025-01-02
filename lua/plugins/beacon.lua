@@ -3,5 +3,5 @@
 return {
   "DanilaMihailov/beacon.nvim",
   enabled = false,
-  event = "User FilePost",
+  event = "VeryLazy",
 }

@@ -34,7 +34,7 @@ return {
       { desc = "Gitsigns | Toggle Blame", silent = true }
     )
   end,
-  event = "User FilePost",
+  event = "VeryLazy",
   opts = {
     signs = {
       add = { text = "│" },

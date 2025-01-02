@@ -5,7 +5,7 @@ return {
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope.nvim",
   },
-  event = "User FilePost",
+  event = "VeryLazy",
   opts = {
     ring = {
       history_length = 100, --- @type integer Default to 100

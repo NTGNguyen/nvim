@@ -3,7 +3,7 @@
 return {
   "utilyre/barbecue.nvim",
   enabled = false,
-  event = "User FilePost",
+  event = "VeryLazy",
   dependencies = {
     "SmiteshP/nvim-navic",
     "nvim-tree/nvim-web-devicons", -- optional dependency

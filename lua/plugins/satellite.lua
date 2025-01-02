@@ -3,7 +3,7 @@
 return {
   "lewis6991/satellite.nvim",
   enabled = false,
-  event = "User FilePost",
+  event = "VeryLazy",
   keys = {
     {
       "<leader>o<C-s>",
