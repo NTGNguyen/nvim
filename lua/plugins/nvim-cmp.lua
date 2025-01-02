@@ -134,9 +134,10 @@ return {
       "sql",
     }, {
       sources = {
-        { name = "copilot" },
-        { name = "vim-dadbod-completion" },
-        { name = "buffer" },
+        { name = "copilot", priority = 0 },
+        { name = "vim-dadbod-completion", priority = 0 },
+        { name = "buffer", priority = 1 },
+        { name = "luasnip", priority = 1 },
       },
     })
 
