@@ -1,7 +1,12 @@
--- NOTE: Path g++:
--- - Choco: "C:/ProgramData/mingw64/mingw64/bin/g*.exe"
--- - Scoop: "C:/Users/kevinnitro/scoop/apps/mingw/current/bin/g++.exe"
-local gcc_path = vim.fn.has "win32" == 0 and "/usr/bin/g*" or "C:/Users/kevinnitro/scoop/apps/mingw/current/bin/g*.exe"
+local get_gcc_path = function()
+  local gcc_path = vim.fn.fnamemodify(vim.fn.exepath "gcc", ":h")
+  if gcc_path == "." then
+    return nil
+  end
+  return gcc_path .. "*"
+end
+
+local gcc_path = get_gcc_path()
 
 return {
   capabilities = {
@@ -24,7 +29,7 @@ return {
     "--fallback-style=Microsoft",
     -- "--header-insertion=never",
     -- "--query-driver=<list-of-white-listed-complers>"
-    "--query-driver=" .. gcc_path,
+    gcc_path ~= nil and "--query-driver=" .. gcc_path or nil,
     "--inlay-hints=true",
     "--function-arg-placeholders",
     "--header-insertion=iwyu",
