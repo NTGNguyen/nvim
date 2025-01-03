@@ -220,7 +220,7 @@ M.modules = {
     if #clients == 0 then
       return ""
     else
-      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " "))
+      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " ") or "")
     end
   end,
 
@@ -242,7 +242,7 @@ M.modules = {
     if #clients == 0 then
       return ""
     else
-      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " "))
+      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " ") or "")
     end
   end,
 
@@ -260,7 +260,7 @@ M.modules = {
     if #clients == 0 then
       return ""
     else
-      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " "))
+      return " %#St_gitIcons# " .. (vim.o.columns > 100 and (table.concat(clients, ", ") .. " ") or "")
     end
   end,
 }
