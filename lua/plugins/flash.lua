@@ -2,7 +2,7 @@
 -- NOTE: Search motions
 return {
   "folke/flash.nvim",
-  enabled = false, -- Disabled by Kev
+  cond = false,
   event = "CmdlineEnter",
   keys = { "f", "F", "t", "T" },
   opts = {

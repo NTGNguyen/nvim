@@ -2,7 +2,7 @@
 -- NOTE: Improve Rust Development
 return {
   "mrcjkb/rustaceanvim",
-  enabled = false, -- Disabled by Kev
+  cond = false,
   version = "^4", -- Recommended
   event = "VeryLazy",
   config = function()

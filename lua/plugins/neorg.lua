@@ -2,7 +2,7 @@
 -- NOTE: Note Taking
 return {
   "nvim-neorg/neorg",
-  enabled = false,
+  cond = false,
   ft = "norg",
   opts = {
     load = {

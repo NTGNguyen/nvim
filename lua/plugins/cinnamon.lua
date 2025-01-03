@@ -3,7 +3,7 @@
 return {
   "declancm/cinnamon.nvim",
   event = "VeryLazy",
-  enabled = false,
+  cond = false,
   opts = {
     keymaps = {
       basic = true, -- Enable the basic keymaps

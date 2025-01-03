@@ -53,7 +53,7 @@ return {
   },
   {
     "github/copilot.vim",
-    enabled = false,
+    cond = false,
     cmd = "Copilot",
     build = ":Copilot setup",
     init = function()
@@ -89,7 +89,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    enabled = false,
+    cond = false,
     branch = "canary",
     cmd = {
       "CopilotChat",
