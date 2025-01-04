@@ -99,10 +99,6 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   opts = function(_, opts)
-    table.insert(opts.sources, {
-      name = "lazydev",
-      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-    })
     table.insert(opts.sources, 1, { name = "copilot" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
