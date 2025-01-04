@@ -218,6 +218,19 @@ autocmd("ModeChanged", {
 
 autocmd("FileType", {
   pattern = {
+    "gitcommit",
+    "markdown",
+    "text",
+  },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+  group = general,
+  desc = "Enable Spell check in these filetypes",
+})
+
+autocmd("FileType", {
+  pattern = {
     "log",
     "markdown",
   },
