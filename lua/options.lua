@@ -51,7 +51,7 @@ local options = {
   -- shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
   -- shellquote = "",
   -- shellxquote = "",
-  shortmess = "AcqFWI",
+  shortmess = "AcqFI",
 }
 
 -- vim.opt.shortmess:append "Ac" -- Disable asking
