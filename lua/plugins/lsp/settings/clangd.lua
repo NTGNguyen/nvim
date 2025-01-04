@@ -1,18 +1,6 @@
-local get_gcc_path = function()
-  local gcc_path = vim.fn.fnamemodify(vim.fn.exepath "gcc", ":h")
-  if gcc_path == "." then
-    return nil
-  end
-  return gcc_path .. "*"
-end
-
-local gcc_path = get_gcc_path()
+local gcc_path = require("core.utils").get_path_from_executable "gcc"
 
 return {
-  capabilities = {
-    documentFormattingProvider = false,
-    documentRangeFormattingProvider = false,
-  },
   cmd = {
     "clangd",
     "--all-scopes-completion",
@@ -29,7 +17,7 @@ return {
     "--fallback-style=Microsoft",
     -- "--header-insertion=never",
     -- "--query-driver=<list-of-white-listed-complers>"
-    gcc_path ~= nil and "--query-driver=" .. gcc_path or nil,
+    gcc_path ~= nil and "--query-driver=" .. gcc_path .. "*" or nil,
     "--inlay-hints=true",
     "--function-arg-placeholders",
     "--header-insertion=iwyu",
