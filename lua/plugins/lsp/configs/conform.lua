@@ -97,8 +97,11 @@ return {
       if bufname:match "/node_modules/" then
         return
       end
-      return { lsp_format = "fallback" }
+      return {}
     end,
+    default_format_opts = {
+      lsp_format = "fallback",
+    },
     formatters_by_ft = formatters_by_ft,
     formatters = formatters,
   },
