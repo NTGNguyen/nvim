@@ -233,6 +233,7 @@ autocmd("FileType", {
   pattern = {
     "log",
     "markdown",
+    "grug-far",
   },
   callback = function()
     vim.opt_local.wrap = false
