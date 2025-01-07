@@ -60,12 +60,9 @@ vim.opt.whichwrap:append "<>[]hl"
 
 -- Replace builtin grep with ripgrep
 if vim.fn.executable "rg" then
-  local ignore_file_path = vim.fn.getenv "HOME" .. "/.config/ripgrep/ignore"
-  if vim.fn.filereadable(ignore_file_path) then
-    vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file " .. ignore_file_path
-  else
-    vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case"
-  end
+  local rgignore = vim.fn.getenv "HOME" .. "/.config/ripgrep/.rgignore"
+  vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file "
+    .. (vim.fn.filereadable(rgignore) and rgignore or vim.fn.stdpath "config" .. "config/ripgrep/.rgignore")
 end
 
 for name, value in pairs(options) do
