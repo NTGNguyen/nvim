@@ -27,7 +27,7 @@ return {
     require("which-key").add {
       {
         -- { "<leader>P", group = "Yanky", icon = "", mode = { "n", "x" } },
-        { "<leader><C-d>", group = "Debugging", icon = "" },
+        { "<leader><C-d>", group = "Database", icon = "" },
         { "<leader>A", group = "API", icon = "󱂛" },
         { "<leader>T", group = "Tests", icon = "󰙨" },
         { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
