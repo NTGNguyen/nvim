@@ -108,7 +108,7 @@ return {
           "--no-ignore",
           "--follow",
           "--exclude",
-          "**/{.git,node_modules,dist,build,.husky/_,__pycache__,*.egg-info,.venv,venv,.idea,.vs,*cache*,*debug*,*bin*,*obj*}/**",
+          "**/{.git,node_modules,dist,build,.husky/_,__pycache__,*.egg-info,.venv*,.idea,.vs,*cache*,*debug*,*bin*,*obj*}/**",
         },
       }
     end, { desc = "Telescope | All Files", silent = true })
