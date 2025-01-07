@@ -36,10 +36,7 @@ return {
       silent = true,
     },
   },
-  build = function()
-    require("lazy").load { plugins = { "markdown-preview.nvim" } }
-    vim.fn["mkdp#util#install"]()
-  end,
+  build = ":call mkdp#util#install()",
   ft = fts,
   init = function()
     vim.g.mkdp_open_to_the_world = 1 -- Open for other to access
