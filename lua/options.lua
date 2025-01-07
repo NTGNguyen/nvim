@@ -71,5 +71,5 @@ end
 
 -- Inlay hint by default
 if vim.fn.has "nvim-0.10" == 1 then
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  vim.lsp.inlay_hint.enable(true)
 end
