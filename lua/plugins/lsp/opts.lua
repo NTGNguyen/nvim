@@ -1,8 +1,10 @@
 local M = {}
 local keymap = vim.keymap.set
 local cmp_nvim_lsp = require "cmp_nvim_lsp"
+local lsp_file_operations = require "lsp-file-operations"
 
-M.capabilities = cmp_nvim_lsp.default_capabilities()
+M.capabilities =
+  vim.tbl_deep_extend("force", cmp_nvim_lsp.default_capabilities(), lsp_file_operations.default_capabilities())
 
 M.lsp_keymaps = function(bufnr)
   -- keymap("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, silent = true })
