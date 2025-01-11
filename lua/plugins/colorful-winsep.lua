@@ -2,7 +2,7 @@
 -- NOTE: Colorful Window Separator
 return {
   "nvim-zh/colorful-winsep.nvim",
-  enabled = true,
+  cond = false,
   event = "WinLeave",
   opts = {
     -- Highlight group is defined in highlight.lua
