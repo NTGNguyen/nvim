@@ -9,8 +9,7 @@ vim.filetype.add {
   },
   pattern = {
     [".*/hypr/.*%.conf"] = "hyprlang",
-    [".*%.github/workflows/.*%.yml"] = "yaml.ghaction",
-    [".*%.github/workflows/.*%.yaml"] = "yaml.ghaction",
+    [".*/%.github[%w/]+workflows[%w/]+.*%.ya?ml"] = "yaml.github",
     [".*"] = {
       function(path, buf)
         return vim.bo[buf]

@@ -4,7 +4,7 @@ return {
     "yaml",
     "yaml.docker-compose",
     "yaml.gitlab",
-    "yaml.ghaction", -- Manually add custom filetype
+    "yaml.github", -- Manually add custom filetype
   },
   settings = {
     yaml = {
