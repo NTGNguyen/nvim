@@ -45,7 +45,7 @@ return {
         { "<leader>s", group = "Snapshot", icon = "", mode = { "x" } },
         { "<leader>t", group = "Terminal", icon = "" },
         { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
-        { "<leader>uR", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
+        { "<leader><C-r>", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
         { "<leader>v", group = "Venv", icon = "" },
         { "<leader>z", group = "Zen", icon = "󰡌" },
         { "sc", group = "Close Buffers From" },
