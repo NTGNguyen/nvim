@@ -106,7 +106,7 @@ return {
       documentation = {
         view = "hover",
         opts = {
-          lang = "markdown",
+          lang = "lsp_markdown",
           replace = true,
           render = "plain",
           format = { "{message}" },
