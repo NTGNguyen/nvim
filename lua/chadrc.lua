@@ -78,9 +78,16 @@ M.nvdash = {
     { txt = "─", no_gap = true, rep = true },
     {
       txt = function()
-        local stats = require("lazy").stats()
-        local milliseconds = math.floor(stats.startuptime) .. " ms"
-        return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. milliseconds
+        local stats, milliseconds
+        pcall(function()
+          stats = require("lazy").stats()
+          milliseconds = math.floor(stats.startuptime) .. " ms"
+        end)
+        if stats ~= nil and milliseconds ~= nil then
+          return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. milliseconds
+        else
+          return "󰇸 Cannot load lazy's status"
+        end
       end,
       no_gap = true,
     },
