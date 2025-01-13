@@ -82,3 +82,7 @@ command("JoinEmptyLines", function(args)
   vim.cmd [[%s/\_s*\%$//e]] -- remove the last empty lines
   vim.cmd "nohlsearch"
 end, { desc = "Join empty lines", bang = true, nargs = "?" })
+
+command("NvChadMasonInstallAll", function()
+  require("nvchad.mason").install_all()
+end, { desc = "NvChad Mason Install All" })
